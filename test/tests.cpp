@@ -1,104 +1,61 @@
 #include "gtest/gtest.h"
-#include "task1.h"
-#include "task2.h"
-#include "task3.h"
-#include "task4.h"
-#include "task5.h"
+#include "Automata.h"
+#include <string>
 
-// task1
-TEST(lab1,task1_1)
-{
-    unsigned long res=findValue(1,20);
-    EXPECT_EQ(232792560,res);
-}
-TEST(lab1,task1_2)
-{
-    unsigned long res=findValue(1,10);
-    EXPECT_EQ(2520,res);
+
+TEST(automata, function_on){
+	Automata aut;
+	string expect = "Hello!";
+	EXPECT_EQ(expect, aut.on());
 }
 
-// task2
-TEST(lab1,task2_1)
-{
-   EXPECT_EQ(true,checkPrime(2));
-}
-TEST(lab1,task2_2)
-{
-   EXPECT_EQ(true,checkPrime(3));
-}
-TEST(lab1,task2_3)
-{
-   EXPECT_EQ(false,checkPrime(12));
-}
-TEST(lab1,task2_4)
-{
-   unsigned long long res=nPrime(6);
-   EXPECT_EQ(13,res);
-}
-TEST(lab1,task2_5)
-{
-   unsigned long long res=nPrime(500);
-   EXPECT_EQ(3571,res);
-}
-TEST(lab1,task2_6)
-{
-   unsigned long long res=nextPrime(1031);
-   EXPECT_EQ(1033,res);
-}
-TEST(lab1,task2_7)
-{
-   unsigned long long res=nextPrime(3559);
-   EXPECT_EQ(3571,res);
-}
-TEST(lab1,task2_8)
-{
-   unsigned long long res=nextPrime(2);
-   EXPECT_EQ(3,res);
+TEST(automata, function_off) {
+	Automata aut;
+	EXPECT_EQ("0", aut.off());
+	aut.on();
+	EXPECT_EQ("Goodbye!", aut.off());
+	aut.on();
+	aut.coin(50);
+	EXPECT_EQ("You cannot turn off the automata right now", aut.off());
 }
 
-// task3
-TEST(lab1,task3_1)
-{
-   unsigned long long res=sumPrime(2000000);
-   unsigned long long expected=142913828922;
-   EXPECT_EQ(expected,res);
-}
-TEST(lab1,task3_2)
-{
-   unsigned long long res=sumPrime(10);
-   unsigned long long expected=17;
-   EXPECT_EQ(expected,res);
+TEST(automata, function_coin) {
+	Automata aut;
+	aut.on();
+	EXPECT_EQ(10, aut.coin(10));
+	EXPECT_EQ(20, aut.coin(10));
 }
 
-// task4
-TEST(lab1,task4_1)
-{
-   char *x="123456789";
-   char *y="000000001";
-   char *expected="123456790";
-   char *z=sum(x,y);
-   EXPECT_STREQ(expected,z);
-}
-TEST(lab1,task4_2)
-{
-   char *x="99999999999999999999";
-   char *y="1";
-   char *expected="100000000000000000000";
-   char *z=sum(x,y);
-   EXPECT_STREQ(expected,z);
+TEST(automata, function_printState) {
+	Automata aut;
+	EXPECT_EQ("0", aut.printState());
+	aut.on();
+	EXPECT_EQ("WAIT", aut.printState());
+	aut.coin(90);
+	EXPECT_EQ("ACCEPT", aut.printState());
+	aut.choice(4);
+	EXPECT_EQ("CHECK", aut.printState());
+	aut.choice(2);
+	EXPECT_EQ("CHECK", aut.printState());	
 }
 
-//task5
-TEST(lab1,task5)
-{
-   char *buf="123,456,789";
-   int N=0;
-   char **result=nullptr;
-   split(&result, &N, buf, ',');
-   
-   EXPECT_EQ(3,N);
-   EXPECT_NE(nullptr,result);
-   EXPECT_STREQ("123",result[0]);
-   EXPECT_STREQ("456",result[1]);
-   EXPECT_STREQ("789",result[2]);
+TEST(automata, function_choice) {
+	Automata aut;
+	EXPECT_EQ("0", aut.choice(4));
+	aut.on();
+	aut.coin(10);
+	EXPECT_EQ("Give more money or make another choice", aut.choice(4));
+	aut.coin(80);
+	EXPECT_EQ("Ok", aut.choice(3));
+}
+
+TEST(automata, function_change) {
+	Automata aut;
+	EXPECT_EQ(0, aut.change());
+	aut.on();
+	aut.coin(90);
+	EXPECT_EQ(90, aut.change());
+	aut.coin(90);
+	aut.choice(1);
+	EXPECT_EQ(20, aut.change());
 }
