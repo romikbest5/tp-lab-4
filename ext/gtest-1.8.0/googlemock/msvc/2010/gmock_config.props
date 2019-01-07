@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Label="UserMacros">
@@ -17,3 +18,24 @@
     </BuildMacro>
   </ItemGroup>
 </Project>
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="UserMacros">
+    <GTestDir>../../../googletest</GTestDir>
+  </PropertyGroup>
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(GTestDir)/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="GTestDir">
+      <Value>$(GTestDir)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
+>>>>>>> 1595a2007b6787a98ac8eb64bdfdfe02df168fb7
