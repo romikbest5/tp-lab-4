@@ -19,13 +19,13 @@ TEST(lab4, test2)
 
 TEST(lab4, test3)
 {
-    Automata * automata = new Automata(R"(..\..\content\menu.txt)");
+    Automata * automata = new Automata();
     automata -> on();
     automata -> printMenu();
     automata -> coin(100);
     automata -> choice(1);
     automata -> cook();
-    int i = (automata -> getProfit() != 0);
+    int i = (automata -> getProfit() == 0);
     EXPECT_EQ(1, i);
 }
 
