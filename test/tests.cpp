@@ -19,7 +19,7 @@ TEST(lab4, test2)
 
 TEST(lab4, test3)
 {
-    Automata * automata = new Automata();
+    Automata * automata = new Automata(R"(..\..\content\menu.txt)");
     automata -> on();
     automata -> printMenu();
     automata -> coin(100);
