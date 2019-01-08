@@ -10,7 +10,6 @@ class Automato
         string getState(){return state;};
         int getCash(){return cash;};
         Automato();
-        virtual ~Automato();
         void on();
         void off();
         void menu();
