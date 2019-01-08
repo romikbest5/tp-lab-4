@@ -1,6 +1,6 @@
 #include <iostream>
 #include <algorithm>
-#include "Automata.h"
+#include "../include/Automata.h"
 
 static string NL = "\n";
 
