@@ -39,7 +39,7 @@ TEST(lab4, test4)
     EXPECT_EQ(1, i);
 }
 
-TEST(lab4, test4)
+TEST(lab4, test5)
 {
     Automata * automata = new Automata();
     automata -> on();
