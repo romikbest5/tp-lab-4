@@ -36,7 +36,7 @@ target_link_libraries(task task_lib)
 # Options. Turn on with 'cmake -Dmyvarname=ON'.
 option(BUILD_TESTS "Build all tests." OFF) # Makes boolean 'test' available.
 
-if (TRUE) #BUILD_TESTS)
+if (BUILD_TESTS)
   # This adds another subdirectory, which has 'project(gtest)'.
   add_subdirectory(ext/gtest-1.8.0)
 
