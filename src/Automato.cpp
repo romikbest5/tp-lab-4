@@ -10,11 +10,6 @@ Automato::Automato()
     cash=0;
 }
 
-Automato::~Automato()
-{
-    //dtor
-}
-
 void Automato::on()
 {
     if (state=="off")
@@ -90,31 +85,4 @@ void Automato::finish()
 {
     state="wait";
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
