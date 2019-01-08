@@ -23,7 +23,7 @@ TEST(lab4, test3)
     automata -> on();
     automata -> printMenu();
     automata -> coin(100);
-    automata -> choice(2);
+    automata -> choice(1);
     automata -> cook();
     int i = (automata -> getProfit() != 0);
     EXPECT_EQ(1, i);
