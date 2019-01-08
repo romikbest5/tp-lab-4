@@ -1,0 +1,6 @@
+product1 - 20
+product2 - 60
+product3 - 1
+product4 - 10
+product5 - 1000
+product6 - 4
