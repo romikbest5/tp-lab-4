@@ -1,8 +1,6 @@
 #include <iostream>
 #include "Automato.h"
 
-using namespace std;
-
 int main()
 {
     Automato Coffe;
