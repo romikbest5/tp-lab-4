@@ -1,4 +1,4 @@
-#include "pch.h"
+
 #include "Automata.h"
 
 using namespace std;
@@ -16,7 +16,7 @@ void tbl() {
 
 Automata::Automata()
 {
-	cash = 0; //по умолчанию 0 монет и он выключен
+	cash = 0; //ГЇГ® ГіГ¬Г®Г«Г·Г Г­ГЁГѕ 0 Г¬Г®Г­ГҐГІ ГЁ Г®Г­ ГўГ»ГЄГ«ГѕГ·ГҐГ­
 	state = OFF;
 	num = -1;
 }
@@ -24,7 +24,7 @@ Automata::Automata()
  string Automata::On() {
 	 if (state == OFF) {
 		 cout << "\nTo turn on the machine press on\n";
-		 state = WAIT; //если введено on, то переход в сост WAIT
+		 state = WAIT; //ГҐГ±Г«ГЁ ГўГўГҐГ¤ГҐГ­Г® on, ГІГ® ГЇГҐГ°ГҐГµГ®Г¤ Гў Г±Г®Г±ГІ WAIT
 		 tbl();
 		 cout << "Machine is ready";
 		 tbl();
@@ -38,7 +38,7 @@ void Automata::changeState() {
 
 	switch (state)
 	{
-		// если выключен, то предлагается On()
+		// ГҐГ±Г«ГЁ ГўГ»ГЄГ«ГѕГ·ГҐГ­, ГІГ® ГЇГ°ГҐГ¤Г«Г ГЈГ ГҐГІГ±Гї On()
 	case OFF:
 		tbl();
 		cout << "***MACHINE DOESN'T WORK***";
@@ -47,7 +47,7 @@ void Automata::changeState() {
 		break;
 
 
-		//ожидание вненесения денег
+		//Г®Г¦ГЁГ¤Г Г­ГЁГҐ ГўГ­ГҐГ­ГҐГ±ГҐГ­ГЁГї Г¤ГҐГ­ГҐГЈ
 	case WAIT:
 	{
 		if (num == -1) {
@@ -65,7 +65,7 @@ void Automata::changeState() {
 
 	}
 
-	//принятие денег
+	//ГЇГ°ГЁГ­ГїГІГЁГҐ Г¤ГҐГ­ГҐГЈ
 	case ACCEPT:
 	{
 		tbl();
@@ -84,7 +84,7 @@ void Automata::changeState() {
 		//Choice();
 		break;
 	}
-	//проверка баланса
+	//ГЇГ°Г®ГўГҐГ°ГЄГ  ГЎГ Г«Г Г­Г±Г 
 	case CHECK:
 	{
 		if (cash < prices[num]) {
@@ -100,7 +100,7 @@ void Automata::changeState() {
 		};
 		break;
 	}
-	//если всё хорошо, то готовим
+	//ГҐГ±Г«ГЁ ГўГ±Вё ГµГ®Г°Г®ГёГ®, ГІГ® ГЈГ®ГІГ®ГўГЁГ¬
 	case COOKING:
 		cook();
 		finish();
@@ -191,7 +191,7 @@ bool Automata::finish() {
 void Automata::Off() {
 	cout << "\nShutdown...\n";
 	state = OFF;
-	cash = 0; //по умолчанию 0 монет и он выключен
+	cash = 0; //ГЇГ® ГіГ¬Г®Г«Г·Г Г­ГЁГѕ 0 Г¬Г®Г­ГҐГІ ГЁ Г®Г­ ГўГ»ГЄГ«ГѕГ·ГҐГ­
 	num = -1;
 	changeState();
 }
