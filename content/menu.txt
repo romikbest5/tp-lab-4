@@ -4,3 +4,5 @@ product3 - 1
 product4 - 10
 product5 - 1000
 product6 - 4
+product7 - 199
+product8 - 1000
