@@ -6,7 +6,7 @@ TEST(lab4,scene1)
 {
     Automata nc;
     string h = nc.on();
-    EXPECT_STREQ("THE MACHINE HAS TURNED ON",h);
+    EXPECT_EQ("THE MACHINE HAS TURNED ON",h);
     
     nc.coin(10);
     int c = nc.getcash();
@@ -16,6 +16,8 @@ TEST(lab4,scene1)
     EXPECT_EQ(ACCEPT, nc.getstate())
         
     string ans = nc.choice(2);
-    EXPECT_STREQ("ENJOY YOUR DRINK",ans);
+    EXPECT_EQ("ENJOY YOUR DRINK",ans);
 }
+
+
 
