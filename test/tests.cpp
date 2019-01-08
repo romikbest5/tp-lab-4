@@ -1,9 +1,5 @@
 #include "gtest/gtest.h"
-#pragma comment(lib, "opengl32.lib") 
-#pragma comment(lib, "glu32.lib") 
-#pragma comment(lib, "glaux.lib")
-#include "pch.h"
-#include "..\Coffee\Source.cpp"
+#include "Source.cpp"
 #include <string>
 
 using namespace std;
