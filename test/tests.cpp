@@ -21,6 +21,7 @@ TEST(lab4, test3)
 {
     Automata * automata = new Automata();
     automata -> on();
+    automata -> printMenu();
     automata -> coin(100);
     automata -> choice(2);
     automata -> cook();
