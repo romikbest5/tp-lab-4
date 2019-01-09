@@ -6,7 +6,8 @@ TEST(lab4, task_1) {
     automata1.on();
 
     STATES state = automata1.getState();
-    EXPECT_EQ(ON, state);
+    STATES cond = IDLE;
+    EXPECT_EQ(cond, state);
 }
 
 TEST(lab4, task_2) {
