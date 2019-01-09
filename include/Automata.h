@@ -2,18 +2,7 @@
 // Created by Илья on 07.01.2019.
 //
 #include "../include/headers.h"
-#include <iostream>
-#include <string>
 
-enum STATES
-{
-    OFF,
-    WAIT,
-    ACCEPT,
-    CHECK,
-    COOK,
-    error
-};
 
 
 const int N = 4;
