@@ -91,7 +91,6 @@ int Automata::cancel()
 {
 	if (state == ACCEPT || state == CHECK) {
 		cout << "Your refund: " << cash << endl;
-		cash = 0;
 		state = WAIT;
 		return cash;
 	}
