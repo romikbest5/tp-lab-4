@@ -2,7 +2,7 @@
 #include "Automato.h"
 
 
-Test(lab4,test)
+TEST(lab4,test)
 {
     Automato Coffe;
     EXPECT_EQ("off",Coffe.getState());
