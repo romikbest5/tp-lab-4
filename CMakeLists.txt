@@ -27,7 +27,7 @@ add_library(task1_lib ${SRC_FILE} include/Automata.h)
 
 
 add_executable(task ${PROJECT_SOURCE_DIR}/src/main.cpp)
-target_link_libraries(task1 task1_lib)
+#target_link_libraries(task1 task1_lib)
 
 
 ################################
