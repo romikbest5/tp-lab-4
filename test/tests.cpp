@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-#include "Source.cpp"
+#include "automata.cpp"
 #include <string>
 
 using namespace std;
