@@ -165,7 +165,6 @@ int Automata::finish()
 	if (state == COOK) {
 		if (drink == cash) {
 			cout << "Here is your drink" << endl;
-			cash = 0;
 			state = WAIT;
 			return cash - drink;
 		}
