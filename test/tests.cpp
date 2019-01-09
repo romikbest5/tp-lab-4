@@ -2,32 +2,32 @@
 #include "automata.h"
 
 //turning on
-TEST(automata,automata_on1){
+TEST(lab4,automata_on1){
 	Automata nes;
 	EXPECT_EQ(1,nes.on);
 }
-TEST(automata,automata_on2){
+TEST(lab4,automata_on2){
 	Automata nes;
 	EXPECT_EQ(STATES::WAIT,nes.on());
 }
 //switch to cooking after turning on
-TEST(automata,automata_cook){
+TEST(lab4,automata_cook){
 	Automata nes;
 	nes.on();
-	EXPECT_EQ(STATES::WAIT,nes.cook(););
+	EXPECT_EQ(STATES::WAIT,nes.cook());
 }
 //lack of money
-TEST(automata,automata_check){
+TEST(lab4,automata_check){
 	Automata nes;
-	nes.on;
+	nes.on();
 	nes.coin(2);
 	nes.choise(1);
 	EXPECT_FALSE(nes.check());
 }
 //change after finish
-TEST(automata,automata_give_change1){
+TEST(lab4,automata_give_change1){
 	Automata nes;
-	nes.on;
+	nes.on();
 	nes.coin(50);
 	nes.choise(1);
 	nes.check();
@@ -36,15 +36,15 @@ TEST(automata,automata_give_change1){
 	EXPECT_EQ(5,nes.giveChange());
 }
 //change after turning on
-TEST(automata,automata_give_change2){
+TEST(lab4,automata_give_change2){
 	Automata nes;
-	nes.on;
+	nes.on();
 	EXPECT_EQ(0,nes.giveChange());
 }
 //change after cancel
-TEST(automata,automata_give_change3){
+TEST(lab4,automata_give_change3){
 	Automata nes;
-	nes.on;
+	nes.on();
 	nes.coin(50);
 	nes.choise(1);
 	nes.check();
@@ -52,17 +52,17 @@ TEST(automata,automata_give_change3){
 	EXPECT_EQ(50,nes.giveChange());
 }
 //status after lack of money
-TEST(automata,automata_cancel1){
+TEST(lab4,automata_cancel1){
 	Automata nes;
-	nes.on;
+	nes.on();
 	nes.coin(2);
 	nes.choise(1);
-	EXPECT_EQ(STATES::WAIT,nes.check(););
+	EXPECT_EQ(STATES::WAIT,nes.check());
 }
 //switch to cancel after cooking
-TEST(automata,automata_cancel2){
+TEST(lab4,automata_cancel2){
 	Automata nes;
-	nes.on;
+	nes.on();
 	nes.coin(2);
 	nes.choise(1);
 	nes.check();
@@ -70,15 +70,15 @@ TEST(automata,automata_cancel2){
 	EXPECT_EQ(STATES::COOK,cancel());
 }
 //switch to cooking after turning on 2
-TEST(automata,automata_cook){
+TEST(lab4,automata_cook){
 	Automata nes;
-	nes.on;
+	nes.on();
 	EXPECT_EQ(1,nes.cook());
 }
 //turning off after inserting money
-TEST(automata,automata_off){
+TEST(lab4,automata_off){
 	Automata nes;
-	nes.on;
+	nes.on();
 	nes.coin(50);
 	EXPECT_EQ(2,nes.off());
 }
