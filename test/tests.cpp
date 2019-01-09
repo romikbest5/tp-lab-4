@@ -66,11 +66,11 @@ TEST(lab4,automata_cancel2){
 	EXPECT_EQ(STATES::COOK,cancel());
 }
 //switch to cooking after turning on 2
-TEST(lab4,automata_cook){
-	Automata nes;
-	nes.on();
-	EXPECT_EQ(STATES::WAIT,nes.cook());
-}
+//TEST(lab4,automata_cook){
+//	Automata nes;
+//	nes.on();
+//	EXPECT_EQ(STATES::WAIT,nes.cook());
+//}
 //turning off after inserting money
 TEST(lab4,automata_off){
 	Automata nes;
