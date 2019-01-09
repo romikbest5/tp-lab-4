@@ -101,6 +101,7 @@ void  Automata::cook(int choice)
 		this->money += price[choice];
 		this->cash -= price[choice];
 		char a = 177, b = 219;
+		/*
 		std::cout << "\n\n\n"<<menu[choice]<< " is cooking...";
 		std::cout << "\n\n\n";
 		for (int i = 0; i <= 25; i++)
@@ -116,7 +117,7 @@ void  Automata::cook(int choice)
 
 			std::cout <<b;
 			Sleep(150);
-		}
+		}*/
 		std::cout << "\n\n\nPlease take your " << menu[choice] << "!\n ";
 	}
 	
