@@ -17,7 +17,7 @@ TEST(lab4, task_2) {
     automata1.coin(50);
     automata1.choice(3);
 
-    unsigned int cash = automata.getCash();
+    unsigned int cash = automata1.getCash();
     EXPECT_EQ(15, cash);
 }
 
@@ -35,6 +35,6 @@ TEST(lab4, task_4) {
     automata.coin(10);
     automata.choice(4);
 
-    unsigned int cash = automata.getCash(0);
+    unsigned int cash = automata.getCash();
     EXPECT_EQ(10, cash);
 }
