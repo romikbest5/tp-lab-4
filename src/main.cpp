@@ -1,4 +1,4 @@
-#include "Automata.h"
+#include "../include/Automata.h"
 #include <iostream>
 #include <string>
 #include "prob.h"
