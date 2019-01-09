@@ -1,4 +1,4 @@
-#include "Automata.h"
+#include "../include/Automata.h"
 #include <iostream>
 #include <string>
 using namespace std;
@@ -8,7 +8,7 @@ Automata::Automata() {
 	cash = 0;	
 }
 
-string Automata::on() {             //включение автомата 
+string Automata::on() {             //ГўГЄГ«ГѕГ·ГҐГ­ГЁГҐ Г ГўГІГ®Г¬Г ГІГ  
 	if (state == OFF) {
 		state = WAIT;
 		cout << "Hello!" << endl;
@@ -16,7 +16,7 @@ string Automata::on() {             //включение автомата
 	return "Hello!";
 }
 
-string Automata::off() {             //выключение автомата
+string Automata::off() {             //ГўГ»ГЄГ«ГѕГ·ГҐГ­ГЁГҐ Г ГўГІГ®Г¬Г ГІГ 
 	if (state != OFF) {
 		if (state == WAIT) {
 			state = OFF;
@@ -24,14 +24,14 @@ string Automata::off() {             //выключение автомата
 			return "Goodbye!";
 		}
 		else {
-			cout << "You cannot turn off the automata right now" << endl;     //вывести ошибку
+			cout << "You cannot turn off the automata right now" << endl;     //ГўГ»ГўГҐГ±ГІГЁ Г®ГёГЁГЎГЄГі
 			return "You cannot turn off the automata right now";
 		}
 	}
 	return "0";
 }
 
-int Automata::coin(int ca) {           //занесение денег на счет пользователем 
+int Automata::coin(int ca) {           //Г§Г Г­ГҐГ±ГҐГ­ГЁГҐ Г¤ГҐГ­ГҐГЈ Г­Г  Г±Г·ГҐГІ ГЇГ®Г«ГјГ§Г®ГўГ ГІГҐГ«ГҐГ¬ 
 	if (state != OFF) {
 		state = ACCEPT;
 		cash = cash + ca;
@@ -41,7 +41,7 @@ int Automata::coin(int ca) {           //занесение денег на счет пользователем
 	return 0;
 }
 
-void Automata::printMenu() {      //отображение меню с напитками и ценами для пользователя
+void Automata::printMenu() {      //Г®ГІГ®ГЎГ°Г Г¦ГҐГ­ГЁГҐ Г¬ГҐГ­Гѕ Г± Г­Г ГЇГЁГІГЄГ Г¬ГЁ ГЁ Г¶ГҐГ­Г Г¬ГЁ Г¤Г«Гї ГЇГ®Г«ГјГ§Г®ГўГ ГІГҐГ«Гї
 	if (state != OFF) {
 		state = CHECK;
 		for (int i = 0; i < 4; i++) {
@@ -50,7 +50,7 @@ void Automata::printMenu() {      //отображение меню с напитками и ценами для по
 	}
 }
 
-string Automata::printState() {     //отображение текущего состояния для пользователя
+string Automata::printState() {     //Г®ГІГ®ГЎГ°Г Г¦ГҐГ­ГЁГҐ ГІГҐГЄГіГ№ГҐГЈГ® Г±Г®Г±ГІГ®ГїГ­ГЁГї Г¤Г«Гї ГЇГ®Г«ГјГ§Г®ГўГ ГІГҐГ«Гї
 	if (state != OFF) {
 		string str;
 		switch (state) {
@@ -76,7 +76,7 @@ string Automata::printState() {     //отображение текущего состояния для пользов
 	return "0";
 }
 
-string Automata::choice(int cho) {         //выбор напитка пользователем;
+string Automata::choice(int cho) {         //ГўГ»ГЎГ®Г° Г­Г ГЇГЁГІГЄГ  ГЇГ®Г«ГјГ§Г®ГўГ ГІГҐГ«ГҐГ¬;
 	if (state != OFF) {
 		state = CHECK;
 		if (cash >= prices[cho - 1]) {
@@ -92,20 +92,20 @@ string Automata::choice(int cho) {         //выбор напитка пользователем;
 	return "0";
 }
 
-void Automata::cook(int cho) {           //имитация процесса приготовления напитка;
+void Automata::cook(int cho) {           //ГЁГ¬ГЁГІГ Г¶ГЁГї ГЇГ°Г®Г¶ГҐГ±Г±Г  ГЇГ°ГЁГЈГ®ГІГ®ГўГ«ГҐГ­ГЁГї Г­Г ГЇГЁГІГЄГ ;
 	state = COOK; 
 	cout << menu[cho] << " is cooking" << endl;
 	//cook
 	Automata::finish();
 }
 
-string Automata::finish() {         //завершение обслуживания пользователя
+string Automata::finish() {         //Г§Г ГўГҐГ°ГёГҐГ­ГЁГҐ Г®ГЎГ±Г«ГіГ¦ГЁГўГ Г­ГЁГї ГЇГ®Г«ГјГ§Г®ГўГ ГІГҐГ«Гї
 	state = CHECK;
 	cout << "Done! Cash is " << cash << endl; 
 	return "Done!";
 }
 
-int Automata::change() {         //выдает сдачу
+int Automata::change() {         //ГўГ»Г¤Г ГҐГІ Г±Г¤Г Г·Гі
 	if (state != OFF) {
 		int c = cash;
 		cash = 0;
