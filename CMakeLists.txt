@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
 
 # Make PROJECT_SOURCE_DIR, PROJECT_BINARY_DIR, and PROJECT_NAME available.
-set(PROJECT_NAME Automata) 
+set(PROJECT_NAME task1) 
 project(${PROJECT_NAME})
 
 set(CMAKE_CXX_FLAGS "-g -Wall")
@@ -13,21 +13,21 @@ set(CMAKE_CXX_FLAGS "-g -Wall")
 #----------------------------------------------------------------------------
 # Define project sources and includes
 #----------------------------------------------------------------------------
-set(COMMON_INCLUDES ${PROJECT_SOURCE_DIR}/include)
+set(COMMON_INCLUDES ${PROJECT_SOURCE_DIR}/src)
 include_directories(${COMMON_INCLUDES})
 file(GLOB TEST_SRC_FILES ${PROJECT_SOURCE_DIR}/test/*.cpp)
 
 
-set(SRC_FILES1 ${PROJECT_SOURCE_DIR}/src/Automata.cpp)
+set(SRC_FILES1 ${PROJECT_SOURCE_DIR}/src/main.cpp)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_library(task1_lib ${SRC_FILES1})
+#add_library(task1_lib ${SRC_FILES1})
 
 
 add_executable(task1 ${PROJECT_SOURCE_DIR}/src/main.cpp )
 
-target_link_libraries(task1 task1_lib)
+#target_link_libraries(task1 task1_lib)
 
 
 ################################
