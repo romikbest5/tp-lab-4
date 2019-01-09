@@ -43,7 +43,6 @@ TEST(lab4,task2_2)
 	cof.coin(30);
 	cof.coin(40);
 	cof.coin(5);
-	aut.cancel(); 
 	EXPECT_EQ(exp, cof.cancel());
 }
 //task2 choice/change/cook/finish
