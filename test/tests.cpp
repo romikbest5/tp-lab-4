@@ -1,9 +1,7 @@
 #include "gtest/gtest.h"
 #include "Automata.h"
 
-const char menu[6][20] = { "ESPRESSO","DUO ESPRESSO","AMERICANO","LATTE","CAPPUCCINO", "HOT CHOCOLATE" }; 
-double price[6] = { 90.0,120.0,150.0,210.0,210.0,180.0 };
-const char cur_state[5][7] = { "off","wait","accept","check","cook" };
+
 // task1
 TEST(lab4,task1_1)
 {
@@ -50,6 +48,6 @@ TEST(lab1,task2_4)
 	vender.on();
 	vender.coin(cash);
 	vender.choice(0);
-	double change=cash-price[0];
+	double change=cash-90;
 	EXPECT_DOUBLE_EQ(change,vender.finish());
 }
