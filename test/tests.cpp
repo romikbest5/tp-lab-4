@@ -1,5 +1,4 @@
 #include "gtest/gtest.h"
-<<<<<<< HEAD
 #include "../include/Automata.h"
 
 // test0
