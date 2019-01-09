@@ -12,7 +12,7 @@ class Automato
         Automato();
         void on();
         void off();
-        void menu();
+        void menu(ostream& streamOut = cout);
         void coin(int);
         void cancel();
         void choice(int);
