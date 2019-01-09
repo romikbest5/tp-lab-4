@@ -7,7 +7,7 @@
 TEST(lab4,task1_1)
 {
 	Automata cof;
-	string exp = "Automata is ON";
+	string exp = "Automata is ON. Waiting...";
 	EXPECT_EQ(exp, cof.on());
 }
 
@@ -40,6 +40,7 @@ TEST(lab4,task2_2)
 {
 	Automata cof;
 	int exp = 75;
+	cof.on();
 	cof.coin(30);
 	cof.coin(40);
 	cof.coin(5);
