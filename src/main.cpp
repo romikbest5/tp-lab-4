@@ -3,9 +3,6 @@
 //
 
 #include <iostream>
-
-#include <gtest/gtest.h>
-#include <gmock/gmock.h>
 #include "../include/Automata.h"
 
 int main(int argc, char* argv[]){
