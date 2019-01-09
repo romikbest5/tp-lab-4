@@ -23,7 +23,9 @@ set(CMAKE_CXX_STANDARD 11)
 set(SRC_FILES ${PROJECT_SOURCE_DIR}/src/Automata.cpp)
 add_library(task_lib ${SRC_FILES})
 add_executable(task ${PROJECT_SOURCE_DIR}/src/main.cpp)
+add_executable(tests ${PROJECT_SOURCE_DIR}/test/tests.cpp)
 target_link_libraries(task task_lib)
+target_link_libraries(tests task_lib)
 
 ################################
 # Testing
