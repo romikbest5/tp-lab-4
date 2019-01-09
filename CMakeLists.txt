@@ -22,7 +22,7 @@ set(SRC_FILES1 ${PROJECT_SOURCE_DIR}/src/Automata.cpp)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_library(task_lib ${SRC_FILES1} include/Automata.h)
+add_library(task1_lib ${SRC_FILES1} include/Automata.h)
 add_executable(task1 ${PROJECT_SOURCE_DIR}/src/main.cpp )
 
 
@@ -69,5 +69,6 @@ if (BUILD_TESTS)
     SET(CMAKE_CXX_FLAGS "-g -O0 -fprofile-arcs -ftest-coverage")
     SET(CMAKE_C_FLAGS "-g -O0 -fprofile-arcs -ftest-coverage")
   endif() #CMAKE_BUILD_TYPE STREQUAL "Coverage"
+
 
 endif()
