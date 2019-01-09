@@ -171,7 +171,6 @@ int Automata::finish()
 		else
 		{
 			cout << "Here is your drink and change -  " << cash - drink << endl;
-			cash = 0;
 			state = WAIT;
 			return cash - drink;
 		}
