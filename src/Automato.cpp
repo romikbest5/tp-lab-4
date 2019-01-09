@@ -23,11 +23,11 @@ void Automato::off()
     state="off";
 }
 
-void Automato::menu()
+void Automato::menu(ostream& streamOut)
 {
     for (int i=0;i<size_of_menu;i++)
     {
-        cout<<i+1<<")"<<drinks[i]<<" - "<<price[i]<<"p"<<endl;
+        streamOut<<i+1<<")"<<drinks[i]<<" - "<<price[i]<<"p"<<endl;
     }
 }
 
