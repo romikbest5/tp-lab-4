@@ -2,11 +2,7 @@
 #include "automata.h"
 
 //turning on
-TEST(lab4,automata_on1){
-	Automata nes;
-	EXPECT_EQ(1,nes.on);
-}
-TEST(lab4,automata_on2){
+TEST(lab4,automata_on){
 	Automata nes;
 	EXPECT_EQ(STATES::WAIT,nes.on());
 }
