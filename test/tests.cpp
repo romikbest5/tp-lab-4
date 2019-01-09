@@ -69,14 +69,14 @@ TEST(lab4,automata_cancel2){
 TEST(lab4,automata_cook){
 	Automata nes;
 	nes.on();
-	EXPECT_EQ(1,nes.cook());
+	EXPECT_EQ(STATES::WAIT,nes.cook());
 }
 //turning off after inserting money
 TEST(lab4,automata_off){
 	Automata nes;
 	nes.on();
 	nes.coin(50);
-	EXPECT_EQ(2,nes.off());
+	EXPECT_EQ(STATES::ACCEPT,nes.off());
 }
 
 
