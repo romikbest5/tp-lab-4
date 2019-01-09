@@ -6,17 +6,17 @@ TEST(automata,automata_on1){
 	Automata nes;
 	EXPECT_EQ(1,nes.on);
 }
-TEST(automata,automata_print_states1){
+TEST(automata,automata_print_state1){
 	Automata nes;
 	nes.on();
-	EXPECT_EQ("WAIT",printStates());
+	EXPECT_EQ("WAIT",printState());
 }
 //switch to cooking after turning on
-TEST(automata,automata_print_states2){
+TEST(automata,automata_print_state2){
 	Automata nes;
 	nes.on();
 	nes.cook();
-	EXPECT_EQ("WAIT",printStates());
+	EXPECT_EQ("WAIT",printState());
 }
 //lack of money
 TEST(automata,automata_check){
@@ -60,7 +60,7 @@ TEST(automata,automata_cancel1){
 	nes.coin(2);
 	nes.choise(1);
 	nes.check();
-	EXPECT_EQ("WAIT",printStates());
+	EXPECT_EQ("WAIT",printState());
 }
 //switch to cancel after cooking
 TEST(automata,automata_cancel2){
@@ -69,7 +69,7 @@ TEST(automata,automata_cancel2){
 	nes.coin(2);
 	nes.choise(1);
 	nes.check();
-	nes.cook()
+	nes.cook();
 	EXPECT_EQ("COOK",cancel());
 }
 //switch to cooking after turning on 2
