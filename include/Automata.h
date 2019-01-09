@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include <windows.h>
+//#include <windows.h>
  const char cur_state[5][7] = { "off","wait","accept","check","cook" };
 
 class Automata {
