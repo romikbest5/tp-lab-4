@@ -55,7 +55,7 @@ STATES Automata::choise(int f){
 	
 }
 bool Automata::check(){
-	if((cash>=prices[select])&&(state==CHECK))
+	if((select!=-1)&&(cash>=prices[select])&&(state==CHECK))
 		return true;
 	cancel();
 	return false; 
