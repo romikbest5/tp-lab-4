@@ -50,7 +50,7 @@ unsigned int Automata::printState()
 	std::cout << cur_state[this->state] << std::endl;
 	return this->state;
 }
-
+//
 bool  Automata::check(int choice)
 {
 	if (this->state = 3)
