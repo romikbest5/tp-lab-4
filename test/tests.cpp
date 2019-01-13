@@ -16,7 +16,7 @@ TEST(lab4,scene1)
     EXPECT_EQ(10,c);
 
     nc.coin(30);
-    EXPECT_EQ(ACCEPT, nc.getstate())
+    EXPECT_EQ(ACCEPT, nc.getstate());
 
     string ans = nc.choice(2);
     EXPECT_EQ("ENJOY YOUR DRINK",ans);
