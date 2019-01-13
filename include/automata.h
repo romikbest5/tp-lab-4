@@ -6,7 +6,7 @@
 #define AUTOMATA_AUTOMATA_H
 
 #include <iostream>
-#include <string.h>
+#include <string>
 #include <chrono>
 #include <thread>
 
