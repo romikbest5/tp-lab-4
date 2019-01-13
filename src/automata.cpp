@@ -3,7 +3,7 @@
 //
 
 #include "automata.h"
-
+using namespace std;
 
 Automata::Automata() {
     this->state = OFF;
