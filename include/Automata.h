@@ -10,7 +10,7 @@ private:
 	double cash;
 	const char menu[6][20] = { "ESPRESSO","DUO ESPRESSO","AMERICANO","LATTE","CAPPUCCINO", "HOT CHOCOLATE" };
 	double price[6] = { 90.0,120.0,150.0,210.0,210.0,180.0 };
-	int state;
+	unsigned int state;
 public:
 	Automata();
 	void on();
