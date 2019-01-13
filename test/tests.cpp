@@ -6,15 +6,15 @@
 TEST(lab4,task1_1)
 {
 	Automata vender;
-    unsigned int state_off=0;
-    EXPECT_EQ(state_off,vender.printState);
+	unsigned int state_off=0;
+    	EXPECT_EQ(state_off,vender.printState);
 }
 TEST(lab4,task1_2)
 {
 	Automata vender;
 	vender.on();
-    unsigned int state_wait=1;
-    EXPECT_EQ(state_wait,vender.printState);
+    	unsigned int state_wait=1;
+    	EXPECT_EQ(state_wait,vender.printState);
 }
 
 // task2
@@ -28,14 +28,14 @@ TEST(lab4,task2_1)
 }
 TEST(lab4,task2_2)
 {
-    Automata vender;
-    unsigned int state_off=0;
+    	Automata vender;
+    	unsigned int state_off=0;
 	vender.coin(199.5);
-    EXPECT_EQ(state_off,vender.printState);
+    	EXPECT_EQ(state_off,vender.printState);
 }
 TEST(lab1,task2_3)
 {
-    double cash=100;
+    	double cash=100;
 	Automata vender;
 	vender.on();
 	vender.coin(cash);
@@ -43,7 +43,7 @@ TEST(lab1,task2_3)
 }
 TEST(lab1,task2_4)
 {
-    double cash=100;
+    	double cash=100;
 	Automata vender;
 	vender.on();
 	vender.coin(cash);
