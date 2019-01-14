@@ -3,6 +3,7 @@
 
 int main()
 {
+    
     Automato Coffe;
     Coffe.on();
     Coffe.coin(10);
