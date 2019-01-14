@@ -72,7 +72,7 @@ TEST(lab4,scene4)
     nc.off();
 }
 
-//wrong number of drink
+//wrong number of drinks
 TEST(lab4,scene5)
 {
     Automata nc;
