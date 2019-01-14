@@ -21,7 +21,7 @@ TEST(lab4,test)
     
     Coffe.coin(10);
     EXPECT_EQ("accept",Coffe.getState());
-    EXPECT_EQ(10,Coffe.getCash());
+    EXPECT_EQ(20,Coffe.getCash());
     
     Coffe.choice(2);
     //not enought cash
