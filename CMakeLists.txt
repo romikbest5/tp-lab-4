@@ -22,7 +22,7 @@ set(SRC_FILES1 ${PROJECT_SOURCE_DIR}/src/Automata.cpp)
 
 set(CMAKE_CXX_STANDARD 11)
 
-#add_library(task1_lib ${SRC_FILES1})
+add_library(task1_lib ${SRC_FILES1})
 
 add_executable(task1 ${PROJECT_SOURCE_DIR}/src/main1.cpp)
 
