@@ -97,12 +97,14 @@ string Automata::choice(int num) {
     }
 }
 
-bool Automata::check(int num) {
+bool Automata::check(int num) const {
     if (cash >=  prices[num])
         return true;
     else
         return false;
 }
+
+
 
 void Automata::cancel(){
     if(cash) {
