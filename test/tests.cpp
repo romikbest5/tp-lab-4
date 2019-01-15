@@ -5,7 +5,7 @@ TEST(lab4, task1_1)
 {
 	Automata automata1;
 	automata1.on();
-	AState state; = automata1.getState();
+	AState state = automata1.getState();
 	AState cond = aWait;
 	EXPECT_EQ(cond, state);
 }
