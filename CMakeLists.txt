@@ -20,11 +20,11 @@ file(GLOB TEST_SRC_FILES ${PROJECT_SOURCE_DIR}/test/*.cpp)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SRC_FILE ${PROJECT_SOURCE_DIR}/src/task.cpp)
+set(SRC_FILE ${PROJECT_SOURCE_DIR}/src/task1.cpp)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_library(task_lib ${SRC_FILE} include/task.h)
+add_library(task_lib ${SRC_FILE} include/Header.h)
 
 
 add_executable(task ${PROJECT_SOURCE_DIR}/src/main.cpp)
