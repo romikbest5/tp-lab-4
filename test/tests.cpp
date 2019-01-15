@@ -53,19 +53,12 @@ TEST(lab4,automata_give_change3){
 	nes.cancel();
 	EXPECT_EQ(50,nes.giveChange());
 }
-//status after lack of money
-TEST(lab4,automata_cancel1){
-	Automata nes;
-	nes.on();
-	nes.coin(2);
-	nes.choise(1);
-	EXPECT_EQ(STATES::WAIT,nes.check());
-}
+
 //switch to cancel after cooking
-TEST(lab4,automata_cancel2){
+TEST(lab4,automata_cancel){
 	Automata nes;
 	nes.on();
-	nes.coin(2);
+	nes.coin(50);
 	nes.choise(1);
 	nes.check();
 	nes.cook();
