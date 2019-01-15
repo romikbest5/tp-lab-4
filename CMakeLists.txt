@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
 
 # Make PROJECT_SOURCE_DIR, PROJECT_BINARY_DIR, and PROJECT_NAME available.
-set(PROJECT_NAME automata) 
+set(PROJECT_NAME task1) 
 project(${PROJECT_NAME})
 
 set(CMAKE_CXX_FLAGS "-g -Wall")
@@ -22,12 +22,12 @@ set(SRC_FILES1 ${PROJECT_SOURCE_DIR}/src/automata.cpp)
 
 set(CMAKE_CXX_STANDARD 11)
 
-#add_library(automata_lib ${SRC_FILES1})
+#add_library(task1_lib ${SRC_FILES1})
 
 
-add_executable(automata ${SRC_FILES1})
+add_executable(task1 ${SRC_FILES1})
 
-#target_link_libraries(automata automata_lib)
+#target_link_libraries(task1 task1_lib)
 ################################
 # Testing
 ################################
@@ -54,7 +54,7 @@ if (BUILD_TESTS)
   target_link_libraries(runUnitTests gtest gtest_main)
 
   # Extra linking for the project.
-  #target_link_libraries(runUnitTests automata_lib)
+  #target_link_libraries(runUnitTests task1_lib)
 
   # This is so you can do 'make test' to see all your tests run, instead of
   # manually running the executable runUnitTests to see those specific tests.
