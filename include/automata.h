@@ -1,4 +1,6 @@
 #pragma once
+#ifndef AUTOMATO_H
+#define AUTOMATO_H
 #include <iostream>
 #include <string>
 #include <stdio.h>
