@@ -1,4 +1,4 @@
-/*#include "gtest/gtest.h"
+#include "gtest/gtest.h"
 #include "Header.h"
 
 TEST(lab4, task_1) 
@@ -43,4 +43,4 @@ TEST(lab4, task_4)
 
 	unsigned int cash = automata.getCash();
 	EXPECT_EQ(35, cash);
-}*/
+}
