@@ -1,4 +1,4 @@
-#include "automata.h"
+#include "Automata.h"
 int main(){
 	Automata coffee;
 	int money;
