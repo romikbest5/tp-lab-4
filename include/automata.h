@@ -28,7 +28,7 @@ public:
     void printMenu();
     void printState();
     string  choice(int num);
-    bool check(int num);
+    bool check(int num) const;
     void cancel();
     void cook(int num);
     void finish();
