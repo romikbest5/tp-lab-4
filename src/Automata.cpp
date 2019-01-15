@@ -1,4 +1,4 @@
-#include "automata.h"
+#include "Automata.h"
 ostream& operator <<(ostream& out,const STATES&t){
 	switch(t){
 		case OFF:return(out<<"OFF");
