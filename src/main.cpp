@@ -6,7 +6,6 @@
 
 	while (true)
 	{
-		std::cout<< <<std::endl;
 		a.printState();
 
 		std::cout << "Actions: " << std::endl;
