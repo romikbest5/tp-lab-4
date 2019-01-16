@@ -1,5 +1,5 @@
 #include "Automata.h"
-
+#include <stdio.h>
 TPrice prices[] =
 {
 	{ "Americano", 5 },
