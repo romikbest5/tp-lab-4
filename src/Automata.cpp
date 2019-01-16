@@ -20,7 +20,7 @@ Automata::Automata()
 		if (state == aOff)
 			state = aWait;
 		else
-			printf("Cant ON from %s state\n", StateNames[state]);
+			std::cout << "Cant ON from" << StateNames[state] << "state" << std::endl;
 	}
 
 	void Automata::off()
@@ -28,19 +28,19 @@ Automata::Automata()
 		if (state == aWait)
 			state = aOff;
 		else
-			printf("Cant OFF from %s state\n", StateNames[state]);
+		std::cout << "Cant OFF from" << StateNames[state] << "state" << std::endl;
 	}
 
 	void Automata::coin()
 	{
 		if (state == aWait)
 		{
-			printf("Enter coin count: ");
+			std::cout << "Enter coin count: " << std::endl;
 			std::cin >> coins;
 			state = aAccept;
 		}
 		else
-			printf("Cant ACCEPT COIN from %s state\n", StateNames[state]);
+			std::cout << "Cant ACCEPT COIN from" << StateNames[state] << "state" << std::endl;
 	}
 
 	// Отмена может произойти из двух состояний
@@ -51,11 +51,11 @@ Automata::Automata()
 		case aWait:
 		case aCheck:
 			state = aAccept;
-			printf("  Return %d coins\n", coins);
+			std::cout << "  Return" << coins << "coins" << std::endl;
 			coins = 0;
 			break;
 		default:
-			printf("Cant CANCEL from %s state\n", StateNames[state]);
+			std::cout << "Cant CANCEL from" << StateNames[state] << "state" << std::endl;
 		};
 	}
 
@@ -63,17 +63,17 @@ Automata::Automata()
 	{
 		if (state == aAccept)
 		{
-			printf("Select:\n");
+			std::cout << "Select:" << std::endl;
 			for (int i = 0; prices[i].price != 0; i++)
-				printf("  %d. %s - %d coins\n", i + 1, prices[i].name, prices[i].price);
-			printf("Enter: ");
+				std::cout << i+1<<"-"<< prices[i].name <<":"<< prices[i].price << "coins" << std::endl;
+			std::cout << "Enter:" << std::endl;
 			std::cin >> sel;
 			sel--;
 
 			state = aCheck;
 		}
 		else
-			printf("Cant CHOICE from %s state\n", StateNames[state]);
+			std::cout << "Cant CHOICE from" << StateNames[state] << "state" << std::endl;
 	}
 
 	bool Automata::check()
@@ -81,16 +81,16 @@ Automata::Automata()
 		if (state == aCheck)
 		{
 			if (prices[sel].price > coins)
-				printf("  No enought coins (%d and price is %d)\n", coins, prices[sel].price);
+				std::cout << "No enought coins (" << coins << "and price is" << coins << ")" << prices[sel].price << std::endl;
 			else
 			{
-				printf("  Check: All ok\n");
+				std::cout << "Check: All ok" <<  std::endl;
 				return true;
 			}
 			// Или к примеру можно вывести "не хватает ингредиентов"
 		}
 		else
-			printf("Cant CHECK in %s state\n", StateNames[state]);
+			std::cout << "Cant CHECK in" << StateNames[state] << "state" << std::endl;
 
 		return false;
 	}
@@ -100,10 +100,10 @@ Automata::Automata()
 		if ((state == aCheck) & check())
 		{
 			state = aCook;
-			printf("  Cook some\n");
+			std::cout << "Cook some" <<  std::endl;
 		}
 		else
-			printf("Cant COOK from %s state\n", StateNames[state]);
+			std::cout << "Cant COOK from " << StateNames[state] << "state" << std::endl;
 	}
 
 	void Automata::finish()
@@ -114,18 +114,18 @@ Automata::Automata()
 
 			if (coins > 0)
 			{
-				printf("  Return %d\n", coins);
+				std::cout << "Return" <<  coins << std::endl;
 				coins = 0;
 			}
 
 			state = aWait;
 		}
 		else
-			printf("Cant FINISH from %s state\n", StateNames[state]);
+			std::cout << "Cant FINISH from" << StateNames[state] << "state" << std::endl;
 	}
 
 	void Automata::printState()
 	{
-		printf("State: %s\n", StateNames[state]);
+		std::cout << "State:" << StateNames[state] << std::endl;
 	}
 
