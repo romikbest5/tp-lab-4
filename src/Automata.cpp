@@ -1,5 +1,5 @@
 #include "Automata.h"
-#include <stdio.h>
+
 TPrice prices[] =
 {
 	{ "Americano", 5 },
@@ -14,7 +14,7 @@ Automata::Automata()
 		coins = 0;
 	}
 
-	// Ïðîñòûå ñîñòîÿíèÿ - óñëîâèÿ õâàòàåò
+	// Простые состояния - условия хватает
 	void Automata::on()
 	{
 		if (state == aOff)
@@ -36,14 +36,14 @@ Automata::Automata()
 		if (state == aWait)
 		{
 			printf("Enter coin count: ");
-			scanf_s("%d", &coins);
+			std::cin >> coins;
 			state = aAccept;
 		}
 		else
 			printf("Cant ACCEPT COIN from %s state\n", StateNames[state]);
 	}
 
-	// Îòìåíà ìîæåò ïðîèçîéòè èç äâóõ ñîñòîÿíèé
+	// Отмена может произойти из двух состояний
 	void Automata::cancel()
 	{
 		switch (state)
@@ -67,7 +67,7 @@ Automata::Automata()
 			for (int i = 0; prices[i].price != 0; i++)
 				printf("  %d. %s - %d coins\n", i + 1, prices[i].name, prices[i].price);
 			printf("Enter: ");
-			scanf_s("%d", &sel);
+			std::cin >> sel;
 			sel--;
 
 			state = aCheck;
@@ -87,7 +87,7 @@ Automata::Automata()
 				printf("  Check: All ok\n");
 				return true;
 			}
-			// Èëè ê ïðèìåðó ìîæíî âûâåñòè "íå õâàòàåò èíãðåäèåíòîâ"
+			// Или к примеру можно вывести "не хватает ингредиентов"
 		}
 		else
 			printf("Cant CHECK in %s state\n", StateNames[state]);
@@ -128,3 +128,4 @@ Automata::Automata()
 	{
 		printf("State: %s\n", StateNames[state]);
 	}
+
