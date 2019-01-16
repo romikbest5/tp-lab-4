@@ -13,7 +13,7 @@ int _tmain(int argc)
 		printf("1 On. 2 Off. 3 Coin. 4. Cancel. 5 Choice. 6 Check. 7 Cook. 8 Finish. 9 Quit\n");
 		printf("Select action: ");
 		int t;
-		scanf_s("%d", &t);
+		std::cin >> t;
 
 		if ((t == 9) | (t == 0)) break;
 
