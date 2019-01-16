@@ -1,4 +1,4 @@
-#include "automata.h"
+#include "Automata.h"
 
 int _tmain(int argc, _TCHAR* argv[])
 {
