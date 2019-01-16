@@ -49,7 +49,6 @@ if (BUILD_TESTS)
 
   # Standard linking to gtest stuff.
   target_link_libraries(runUnitTests gtest gtest_main)
-  add_library(task_lib ${SRC_FILE} include/task.h)
 
   # Extra linking for the project.
   #target_link_libraries(runUnitTests task1_lib task2_lib task3_lib)
