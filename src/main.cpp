@@ -1,6 +1,6 @@
 #include "Automata.h"
 
-int _tmain(int argc)
+ int main(int argc, char *argv[])
 {
 	Automata a;
 
