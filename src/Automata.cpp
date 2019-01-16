@@ -1,4 +1,4 @@
-#include "automata.h"
+#include "Automata.h"
 
 TPrice prices[] =
 {
@@ -14,7 +14,7 @@ Automata::Automata()
 		coins = 0;
 	}
 
-	// Простые состояния - условия хватает
+	// ГЏГ°Г®Г±ГІГ»ГҐ Г±Г®Г±ГІГ®ГїГ­ГЁГї - ГіГ±Г«Г®ГўГЁГї ГµГўГ ГІГ ГҐГІ
 	void Automata::on()
 	{
 		if (state == aOff)
@@ -43,7 +43,7 @@ Automata::Automata()
 			printf("Cant ACCEPT COIN from %s state\n", StateNames[state]);
 	}
 
-	// Отмена может произойти из двух состояний
+	// ГЋГІГ¬ГҐГ­Г  Г¬Г®Г¦ГҐГІ ГЇГ°Г®ГЁГ§Г®Г©ГІГЁ ГЁГ§ Г¤ГўГіГµ Г±Г®Г±ГІГ®ГїГ­ГЁГ©
 	void Automata::cancel()
 	{
 		switch (state)
@@ -87,7 +87,7 @@ Automata::Automata()
 				printf("  Check: All ok\n");
 				return true;
 			}
-			// Или к примеру можно вывести "не хватает ингредиентов"
+			// Г€Г«ГЁ ГЄ ГЇГ°ГЁГ¬ГҐГ°Гі Г¬Г®Г¦Г­Г® ГўГ»ГўГҐГ±ГІГЁ "Г­ГҐ ГµГўГ ГІГ ГҐГІ ГЁГ­ГЈГ°ГҐГ¤ГЁГҐГ­ГІГ®Гў"
 		}
 		else
 			printf("Cant CHECK in %s state\n", StateNames[state]);
