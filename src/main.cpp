@@ -6,12 +6,12 @@
 
 	while (true)
 	{
-		printf("\n");
+		std::cout<< <<std::endl;
 		a.printState();
 
-		printf("Actions:\n");
-		printf("1 On. 2 Off. 3 Coin. 4. Cancel. 5 Choice. 6 Check. 7 Cook. 8 Finish. 9 Quit\n");
-		printf("Select action: ");
+		std::cout << "Actions: " << std::endl;
+		std::cout << "1 On. 2 Off. 3 Coin. 4. Cancel. 5 Choice. 6 Check. 7 Cook. 8 Finish. 9 Quit " << std::endl;
+		std::cout << "Select action: " << std::endl;
 		int t;
 		std::cin >> t;
 
