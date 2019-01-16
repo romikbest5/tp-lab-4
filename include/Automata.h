@@ -2,8 +2,6 @@
 #include <iostream>
 #include <string>
 #include <stdio.h>
-#include <tchar.h>
-#include <windows.h>
 
 using namespace std;
 
