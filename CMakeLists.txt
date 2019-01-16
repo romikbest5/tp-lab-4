@@ -18,18 +18,12 @@ include_directories(${COMMON_INCLUDES})
 file(GLOB TEST_SRC_FILES ${PROJECT_SOURCE_DIR}/test/*.cpp)
 
 
-set(CMAKE_CXX_STANDARD 11)
-
-set(SRC_FILE ${PROJECT_SOURCE_DIR}/src/task1.cpp)
-
-set(CMAKE_CXX_STANDARD 11)
-
-add_library(task_lib ${SRC_FILE} include/Header.h)
-
-
+set(SRC_FILES ${PROJECT_SOURCE_DIR}/src/task1.cpp)
+add_library(task_lib ${SRC_FILES})
 add_executable(task ${PROJECT_SOURCE_DIR}/src/main.cpp)
-
+#add_executable(tests ${PROJECT_SOURCE_DIR}/test/tests.cpp)
 target_link_libraries(task task_lib)
+#target_link_libraries(tests task_lib)
 
 ################################
 # Testing
@@ -55,6 +49,7 @@ if (BUILD_TESTS)
 
   # Standard linking to gtest stuff.
   target_link_libraries(runUnitTests gtest gtest_main)
+  add_library(task_lib ${SRC_FILE} include/task.h)
 
   # Extra linking for the project.
   #target_link_libraries(runUnitTests task1_lib task2_lib task3_lib)
