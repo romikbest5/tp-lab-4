@@ -2,8 +2,6 @@
 
 using namespace std;
 
-
-
 void Automata::on() {
 	State = WAIT;
 	cout << "Machine is working\n";
@@ -162,5 +160,4 @@ int main()
 	m.choice(3);
 	m.coin(2);
 	*/
-	_getch();
 }
