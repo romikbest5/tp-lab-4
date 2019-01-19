@@ -1,7 +1,6 @@
 #pragma once
 
 #include <iostream>
-#include <conio.h>
 #include <string.h>
 
 class Automata {
@@ -9,8 +8,8 @@ private:
 	int cash, ch;
 	string menu[4] = { "tea", "coffee with milk", "cappuccino", "espresso" };
 	int prices[4] = { 15, 20, 30, 25 };
-	enum STATES { OFF, WAIT, ACCEPT, CHECK, COOK }; // перечислителный тип
-	STATES State; // переменная для хранения состояния
+	enum STATES { OFF, WAIT, ACCEPT, CHECK, COOK }; // ГЇГҐГ°ГҐГ·ГЁГ±Г«ГЁГІГҐГ«Г­Г»Г© ГІГЁГЇ
+	STATES State; // ГЇГҐГ°ГҐГ¬ГҐГ­Г­Г Гї Г¤Г«Гї ГµГ°Г Г­ГҐГ­ГЁГї Г±Г®Г±ГІГ®ГїГ­ГЁГї
 
 	void printMenu();
 	void cook();
@@ -18,7 +17,7 @@ private:
 
 
 public:
-	Automata(); // конструктор
+	Automata(); // ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г°
 	void on();
 	void off();
 	void coin(int a);
