@@ -53,6 +53,6 @@ TEST(Lab4, test7) {
 	a.coin(23);
 	a.choice(3);
 	a.coin(10);
-	int k = a.getCash();
+	int k = a.getCash(); 
 	EXPECT_EQ(k, 3);
 }
