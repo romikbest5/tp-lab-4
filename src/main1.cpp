@@ -1,14 +1,16 @@
 #include "Automata.h"
+#include <string>
 
 using namespace std;
 
-void Automata::on() {
+string Automata::on() {
 	State = WAIT;
 	cout << "Machine is working\n";
+	return "ON";
 }
 
 
-void Automata::off()
+string Automata::off()
 {
 	if (State != OFF) //ĺńëč óćĺ âűęëţ÷ĺí, ňî íĺ âűęëţ÷ŕĺě ĺůĺ đŕç 
 	{
@@ -20,7 +22,13 @@ void Automata::off()
 		State = OFF;
 		ch = 0;
 		cout << "Turning off the machine..\n";
+		return "OFF";
 	}
+}
+
+int Automata::getCash()
+{
+	return cash;
 }
 
 void Automata::coin(int a) {
@@ -79,6 +87,7 @@ void Automata::choice(int a) {
 }
 
 void Automata::printMenu() {
+	using namespace std;
 	int size = sizeof(prices) / sizeof(int);
 	for (int i = 0; i < size; i++)
 		cout << menu[i] << " - " << prices[i] << endl;
@@ -130,7 +139,7 @@ void Automata::cook()
 void Automata::finish() {
 	State = WAIT;
 	cout << "Your change: " << cash - prices[ch] << endl;
-	cash = 0;
+	cash = cash - prices[ch];
 	ch = 0;
 	cout << "Thank you, have a good day! \n";
 }
@@ -139,25 +148,4 @@ Automata::Automata() {
 	cash = 0;
 	State = OFF;
 	ch = 0;
-}
-
-
-int main()
-{
-	Automata m;
-	m.on();
-	m.coin(20);
-	m.coin(7);
-	m.choice(3);
-	m.coin(2);
-	m.coin(1);
-	/*m.off();
-	//m.coin(5);
-	m.cancel();
-	m.coin(1);
-	m.coin(2);
-	m.coin(26);
-	m.choice(3);
-	m.coin(2);
-	*/
 }
