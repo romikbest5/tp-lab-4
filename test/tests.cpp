@@ -4,7 +4,7 @@
 TEST(lab4, task1_1)
 {
 	//Автомат включился и вернул true
-	Automata machine;
+	Automata::Automata machine;
 	
 	bool expected = true;
 	bool result = machine.on();
@@ -14,7 +14,7 @@ TEST(lab4, task1_1)
 TEST(lab4, task1_2)
 {
 	//Автомат выключен и текущее состояние OFF
-	Automata machine;
+	Automata::Automata machine;
 	machine.on();
 	machine.off();
 
@@ -26,7 +26,7 @@ TEST(lab4, task1_2)
 TEST(lab4, task1_3)
 {
 	//Автомат вернул значение: сколько монет было вставлено
-	Automata machine;
+	Automata::Automata machine;
 	machine.on();
 
 	int expected = 40;
@@ -37,7 +37,7 @@ TEST(lab4, task1_3)
 TEST(lab4, task1_4)
 {
 	//При вставке монет текущее состояние монет "...Inserting money..."
-	Automata machine;
+	Automata::Automata machine;
 	machine.on();
 	machine.coin(50);
 
@@ -49,7 +49,7 @@ TEST(lab4, task1_4)
 TEST(lab4, task1_5)
 {
 	//Inserting money
-	Automata machine;
+	Automata::Automata machine;
 	machine.on();
 	machine.coin(10);
 
@@ -60,7 +60,7 @@ TEST(lab4, task1_5)
 
 TEST(lab4, task1_6)
 {
-	Automata machine;
+	Automata::Automata machine;
 	machine.on();
 	machine.coin(10);
 	
@@ -71,7 +71,7 @@ TEST(lab4, task1_6)
 
 TEST(lab4, task1_7)
 {
-	Automata machine;
+	Automata::Automata machine;
 	machine.on();
 	machine.coin(10);
 	machine.choice(3);
@@ -83,7 +83,7 @@ TEST(lab4, task1_7)
 
 TEST(lab4, task1_8)
 {
-	Automata machine;
+	Automata::Automata machine;
 	machine.on();
 	machine.coin(40);
 	machine.choice(3);
@@ -95,7 +95,7 @@ TEST(lab4, task1_8)
 
 TEST(lab4, task1_9)
 {
-	Automata machine;
+	Automata::Automata machine;
 	machine.on();
 	machine.coin(30);
 	machine.choice(3);
@@ -109,7 +109,7 @@ TEST(lab4, task1_9)
 
 TEST(lab4, task1_10)
 {
-	Automata machine;
+	Automata::Automata machine;
 	machine.on();
 	machine.coin(40);
 	machine.choice(3);
