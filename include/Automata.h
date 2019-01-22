@@ -10,8 +10,8 @@ const int N = 4;
 class Automata {
 private:
     double cash;
-    std::string menu[N] = {"coffee", "milk  ", "tea   ", "water "};
-    double prices[N] = {40, 12, 20, 10};
+    std::string menu[N] = {"coffee   ", "milk     ", "tea      ", "water    ", "whiskey  ", "puerh tea"};
+    double prices[N] = {40, 12, 20, 10, 120, 50};
     STATES state;
     int position;
 public:
