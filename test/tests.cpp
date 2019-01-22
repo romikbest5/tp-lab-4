@@ -20,7 +20,7 @@ TEST(lab4, task1_2)
 
 	string expected = "OFF";
 	string result = machine.printState();
-	EXPECT_EQ(expected, tmp);
+	EXPECT_EQ(expected, result);
 }
 
 TEST(lab4, task1_3)
@@ -43,7 +43,7 @@ TEST(lab4, task1_4)
 
 	string expected = "...Inserting money...";
 	string result = machine.printState();
-	EXPECT_EQ(expected, tmp);
+	EXPECT_EQ(expected, result);
 }
 
 TEST(lab4, task1_5)
@@ -54,7 +54,7 @@ TEST(lab4, task1_5)
 	machine.coin(10);
 
 	string expected = "Americano";
-	int result = machine.choice(3);
+	string result = machine.choice(3);
 	EXPECT_EQ(expected, result);
 }
 
