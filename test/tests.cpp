@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
 #include "Automata.h"
 
-TEST(lab4, task_1)
+TEST(lab4, task1_1)
 {
 	//Автомат включился и вернул true
 	Automata machine;
@@ -11,7 +11,7 @@ TEST(lab4, task_1)
 	EXPECT_EQ(expected, result);
 }
 
-TEST(lab4, task_2)
+TEST(lab4, task1_2)
 {
 	//Автомат выключен и текущее состояние OFF
 	Automata machine;
@@ -23,7 +23,7 @@ TEST(lab4, task_2)
 	EXPECT_EQ(expected, tmp);
 }
 
-TEST(lab4, task_3)
+TEST(lab4, task1_3)
 {
 	//Автомат вернул значение: сколько монет было вставлено
 	Automata machine;
@@ -34,7 +34,7 @@ TEST(lab4, task_3)
 	EXPECT_EQ(expected, result);
 }
 
-TEST(lab4, task_4)
+TEST(lab4, task1_4)
 {
 	//При вставке монет текущее состояние монет "...Inserting money..."
 	Automata machine;
@@ -46,7 +46,7 @@ TEST(lab4, task_4)
 	EXPECT_EQ(expected, tmp);
 }
 
-TEST(lab4, task_5)
+TEST(lab4, task1_5)
 {
 	//Inserting money
 	Automata machine;
@@ -58,7 +58,7 @@ TEST(lab4, task_5)
 	EXPECT_EQ(expected, result);
 }
 
-TEST(lab4, task_6)
+TEST(lab4, task1_6)
 {
 	Automata machine;
 	machine.on();
@@ -69,7 +69,7 @@ TEST(lab4, task_6)
 	EXPECT_EQ(expected, result);
 }
 
-TEST(lab4, task_7)
+TEST(lab4, task1_7)
 {
 	Automata machine;
 	machine.on();
@@ -81,7 +81,7 @@ TEST(lab4, task_7)
 	EXPECT_EQ(expected, result);
 }
 
-TEST(lab4, task_8)
+TEST(lab4, task1_8)
 {
 	Automata machine;
 	machine.on();
@@ -93,7 +93,7 @@ TEST(lab4, task_8)
 	EXPECT_EQ(expected, result);
 }
 
-TEST(lab4, task_9)
+TEST(lab4, task1_9)
 {
 	Automata machine;
 	machine.on();
@@ -107,7 +107,7 @@ TEST(lab4, task_9)
 	EXPECT_EQ(expected, result);
 }
 
-TEST(lab4, task_10)
+TEST(lab4, task1_10)
 {
 	Automata machine;
 	machine.on();
