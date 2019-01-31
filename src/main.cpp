@@ -1,6 +1,5 @@
 #include <iostream>
 #include "Automata.h"
-#include "Automata.cpp"
 using namespace std;
 
 int main()
