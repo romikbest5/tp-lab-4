@@ -18,7 +18,7 @@ public:
 	void choice(int item);
 	bool check(int item);
 	void cancel();
-	void cook();
+	void cook(int item);
 	void finish();
 	STATES getState();
 };

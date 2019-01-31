@@ -113,13 +113,13 @@ TEST(lab4,task10)
 	drink.coin(44);
 	drink.choice(2);
 	if (drink.check(2))
-		drink.cook();
+		drink.cook(2);
 	else {
 		drink.contined(1);
 		while (!drink.check(2)) {
 			drink.coin(3);
 		}
-		drink.cook();
+		drink.cook(2);
 	}
 	res = drink.getState();
     EXPECT_EQ(STATES::COOK, res);
@@ -133,13 +133,13 @@ TEST(lab4,task11)
 	drink.coin(44);
 	drink.choice(2);
 	if (drink.check(2))
-		drink.cook();
+		drink.cook(2);
 	else {
 		drink.contined(1);
 		while (!drink.check(2)) {
 			drink.coin(3);
 		}
-		drink.cook();
+		drink.cook(2);
 	}
 	drink.finish();
 	res = drink.getState();
@@ -154,13 +154,13 @@ TEST(lab4,task12)
 	drink.coin(44);
 	drink.choice(2);
 	if (drink.check(2))
-		drink.cook();
+		drink.cook(2);
 	else {
 		drink.contined(1);
 		while (!drink.check(2)) {
 			drink.coin(10);
 		}
-		drink.cook();
+		drink.cook(2);
 	}
 	drink.finish();
 	res = drink.getState();
@@ -175,7 +175,7 @@ TEST(lab4,task13)
 	drink.coin(44);
 	drink.choice(2);
 	if (drink.check(2))
-		drink.cook();
+		drink.cook(2);
 	else {
 		drink.contined(0);
 	}

@@ -88,7 +88,8 @@ void Automata::cancel() {
 	printMenu();
 }
 
-void Automata::cook() {
+void Automata::cook(int item) {
+	cash = cash - prices[item];
 	state = COOK;
 }
 
