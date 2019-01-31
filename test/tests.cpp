@@ -92,13 +92,13 @@ TEST(lab4,task9)
 	drink.coin(44);
 	drink.choice(2);
 	if (drink.check(2))
-		drink.cook();
+		drink.cook(2);
 	else {
 		drink.contined(1);
 		while (!drink.check(2)) {
 			drink.coin(3);
 		}
-		drink.cook();
+		drink.cook(2);
 	}
 	res = drink.check(2);
 	EXPECT_TRUE(res);
