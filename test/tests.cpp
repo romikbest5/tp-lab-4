@@ -68,7 +68,8 @@ TEST(lab4,task7)
 	drink.coin(40);
 	drink.choice(1);
 	res = drink.check(1);
-    EXPECT_EQ(true, res);
+	EXPECT_TRUE(res);
+    //EXPECT_EQ(true, res);
 }
 
 TEST(lab4,task8)
@@ -79,7 +80,8 @@ TEST(lab4,task8)
 	drink.coin(29);
 	drink.choice(3);
 	res = drink.check(3);
-    EXPECT_EQ(false, res);
+	EXPECT_FALSE(res);
+    //EXPECT_EQ(false, res);
 }
 
 TEST(lab4,task9)
@@ -99,7 +101,8 @@ TEST(lab4,task9)
 		drink.cook();
 	}
 	res = drink.check(2);
-    EXPECT_EQ(true, res);
+	EXPECT_TRUE(res);
+    //EXPECT_EQ(true, res);
 }
 
 TEST(lab4,task10)
