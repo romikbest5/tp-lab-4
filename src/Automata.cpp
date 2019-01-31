@@ -19,9 +19,18 @@ void Automata::off() {
 }
 
 void Automata::coin(int money) {
-	state = ACCEPT;
-	cout << "you put " << money << endl;
-	cash = cash + money;
+	if(money > 0){
+		state = ACCEPT;
+		cout << "you put " << money << endl;
+		cash = cash + money;
+	}
+}
+
+void Automata::choice(int item) {
+	if(item>-1 && item<5){
+		cout << "you choose " << menu[item] << endl;
+		state = CHECK;
+	}
 }
 
 bool Automata::contined(bool answer) {
@@ -31,13 +40,6 @@ bool Automata::contined(bool answer) {
 	else
 		cout << "You want to cancel" << endl;
 	return answer;
-}
-
-void Automata::choice(int item) {
-	if(item>-1 && item<5){
-		cout << "you choose " << menu[item] << endl;
-		state = CHECK;
-	}
 }
 
 void Automata::printMenu() {
@@ -83,7 +85,6 @@ bool Automata::check(int item) {
 
 void Automata::cancel() {
 	state = WAIT;
-	cash = 0;
 	printMenu();
 }
 
@@ -98,4 +99,8 @@ void Automata::finish() {
 	else {
 		state = WAIT;
 	}
+}
+
+STATES Automata::getState(){
+	return state;
 }
