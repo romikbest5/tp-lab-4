@@ -5,21 +5,19 @@ using namespace std;
 
 int main()
 {
-	int money;
-	int choice;
 	Automata coffeeAutomata;
 	coffeeAutomata.on();
-	coffeeAutomata.coin(money);
-	coffeeAutomata.choice(choice);
-	if (coffeeAutomata.check(choice))
+	coffeeAutomata.coin(40);
+	coffeeAutomata.choice(1);
+	if (coffeeAutomata.check(1))
 		coffeeAutomata.cook();
 	else {
 		coffeeAutomata.contined(1);
-		while (!coffeeAutomata.check(choice)) {
-			coffeeAutomata.coin(money);
+		while (!coffeeAutomata.check(1)) {
+			coffeeAutomata.coin(1);
 		}
+		coffeeAutomata.cook();
 	}
 	coffeeAutomata.finish();
-	coffeeAutomata.printState(-1);
     return 0;
 }

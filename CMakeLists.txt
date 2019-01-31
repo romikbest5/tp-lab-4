@@ -24,7 +24,7 @@ set(CMAKE_CXX_STANDARD 11)
 
 add_library(Automata_lib ${SRC_FILES} include/Automata.h)
 
-add_executable(Automata ${PROJECT_SRC_FILES}/src/main.cpp)
+add_executable(Automata ${PROJECT_SRC_DIR}/src/main.cpp)
 
 target_link_libraries(Automata Automata_lib)
 
