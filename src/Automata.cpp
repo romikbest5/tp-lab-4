@@ -2,7 +2,7 @@
 
 using namespace std;
 
-/*===== [����������� ������] =====*/
+/*===== [Конструктор класса] =====*/
 Automata::Automata()
 {
 	state = OFF;
@@ -27,7 +27,7 @@ Automata::Automata()
 		menu[i] = tmp_menu[i];
 	}
 };
-/*===== [�����: �������� �������] =====*/
+/*===== [Метод: включить автомат] =====*/
 bool Automata::on()
 {
 	if (state == OFF)
@@ -41,7 +41,7 @@ bool Automata::on()
 	}
 	return false;
 }
-/*===== [�����: ��������� �������] =====*/
+/*===== [Метод: выключить автомат] =====*/
 bool Automata::off()
 {
 	if (state != OFF)
@@ -54,7 +54,7 @@ bool Automata::off()
 	}
 	return false;
 }
-/*===== [�����: ������� �����] =====*/
+/*===== [Метод: вставка монет] =====*/
 int Automata::coin(int sum)
 {
 	state = ACCEPT;
@@ -67,7 +67,7 @@ int Automata::coin(int sum)
 	else cout << "[ X ]You can insert a maximum of 100 coins. Insert coins again:" << endl;
 	return cash;
 }
-/*===== [�����: ����� ���� �� �����] =====*/
+/*===== [Метод: вывод меню на экран] =====*/
 void Automata::printMenu()
 {
 	cout << "Choose an item from the menu-list below:" << endl;
@@ -81,7 +81,7 @@ void Automata::printMenu()
 	}
 	cout << endl;
 }
-/*===== [�����: ������� ������� ��������� �� �����] =====*/
+/*===== [Метод: вывести текущее состояние на экран] =====*/
 string Automata::printState()
 {
 	string curr_state;
@@ -95,7 +95,7 @@ string Automata::printState()
 	}
 	return curr_state;
 }
-/*===== [�����: ����� �������] =====*/
+/*===== [Метод: выбор напитка] =====*/
 string Automata::choice(int menu_id)
 {
 	if (menu_id >= 1 && menu_id <= MAX_AMOUNT)
@@ -114,7 +114,7 @@ string Automata::choice(int menu_id)
 		printMenu();
 	}
 }
-/*===== [�����: �������� ����������� �����] =====*/
+/*===== [Метод: проверка необходимой суммы] =====*/
 int Automata::check(int menu_id)
 {
 	if (state == CHECK)
@@ -123,29 +123,29 @@ int Automata::check(int menu_id)
 		{
 			cout << "[ X ]You've inserted not enough money for the " << menu[menu_id] << " to be chosen!" << endl;
 			cout << "Insert the missing money in amount of " << (prices[menu_id] - cash) << " coins or cancel the operation!" << endl;
-			return 0; //������������ �����
+			return 0; //Недостаточно денег
 		}
 		cout << "Checked! Preparing to cook..." << endl;
 		cout << "[ * ]You still can cancel the operation. The machine will return your cash back." << endl;
-		return 1; //��� ������
+		return 1; //Все хорошо
 	}
-	return -1;//������ �������� ���������
+	return -1;//Ошибка текущего состояния
 }
-/*===== [�����: ������ ��������] =====*/
+/*===== [Метод: отмена действий] =====*/
 int Automata::cancel()
 {
 	if (state == ACCEPT || state == CHECK)
 	{
 		cout << "[ X ]You canceled the operation." << endl;
 		cout << "Take your " << cash << " coins back!" << endl;
-		cash = 0; //���������� ����������� ������
-		state = WAIT; //��������� � ��������� ��������
+		cash = 0; //Сбрасываем вставленные деньги
+		state = WAIT; //Переходим в состояние ожидания
 		cout << endl << printState() << endl << endl;
 		return cash;
 	}
-	return -1;//����� ������
+	return -1;//Иначе ошибка
 }
-/*===== [�����: ������������� �������] =====*/
+/*===== [Метод: приготовление напитка] =====*/
 int Automata::cook()
 {
 	if (state == CHECK && checked_status == 1)
@@ -158,7 +158,7 @@ int Automata::cook()
 	else cout << "[ X ]The machine has not checked inserted cash yet!" << endl;
 	return 0;
 }
-/*===== [�����: ���������� ������������] =====*/
+/*===== [Метод: завершения обслуживания] =====*/
 int Automata::finish()
 {
 	if (state == COOK)
