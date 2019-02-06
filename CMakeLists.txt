@@ -4,6 +4,7 @@ cmake_minimum_required(VERSION 2.8)
 set(PROJECT_NAME task1) 
 project(${PROJECT_NAME})
 
+set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_FLAGS "-g -Wall")
 
 # If you want your own include/ directory, set this, and then you can do
@@ -18,13 +19,11 @@ include_directories(${COMMON_INCLUDES})
 file(GLOB TEST_SRC_FILES ${PROJECT_SOURCE_DIR}/test/*.cpp)
 
 set(SRC_FILES ${PROJECT_SOURCE_DIR}/src/task1.cpp)
+add_library(task1_lib ${SRC_FILES})
+add_executable(task1 ${PROJECT_SOURCE_DIR}/src/main.cpp)
 
-set(CMAKE_CXX_STANDARD 11)
-
-add_library(task_lib ${SRC_FILES})
-add_executable(task ${PROJECT_SOURCE_DIR}/src/main.cpp)
 #add_executable(tests ${PROJECT_SOURCE_DIR}/test/tests.cpp)
-target_link_libraries(task task_lib)
+target_link_libraries(task1 task1_lib)
 
 
 ################################
