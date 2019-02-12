@@ -7,6 +7,7 @@ using namespace std;
 
 Automata::Automata() {
 	state = OFF;
+	cash_tmp=0;
 }
 void Automata::on(){
 	state = WAIT;
