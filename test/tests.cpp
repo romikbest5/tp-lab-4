@@ -27,7 +27,6 @@ TEST(Lab4, test3)
 	nescaffe.coin(10);
 	nescaffe.choice(2);
 	nescaffe.coin(50);
-	nescaffe.choice(2);
     EXPECT_EQ(30, nescaffe.getChange());
 }
 TEST(Lab4, test4) 
