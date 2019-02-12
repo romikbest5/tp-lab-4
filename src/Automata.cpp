@@ -7,9 +7,10 @@ using namespace std;
 
 Automata::Automata() {
 	state = OFF;
-	cash_tmp=0;
+	
 }
 void Automata::on(){
+	cash_tmp=0;
 	state = WAIT;
 	cout << "I'm ready!" << endl;
 	printMenu();
