@@ -1,5 +1,7 @@
 #ifndef _AUTOMATA_H
-#define _AUTOMATA_H_
+#define _AUTOMATA_H
+#include <array>
+
 #pragma once
 
 typedef enum{
@@ -19,18 +21,17 @@ private:
 	int choice_int;
 	STATES state;
 public:
-	Automata(){	
-	}
-	void Automata::on();
-	void Automata::off();
-	void Automata::coin(int money); 
-	void Automata::printMenu();
-	STATES Automata::printState();
+	Automata();
+	void on();
+	void off();
+	void coin(int money); 
+	void printMenu();
+	STATES printState();
 	void choice(int ch);
-	void Automata::check(); 
-	int Automata::getChange();
+	void check(); 
+	int getChange();
 	void cancel();
 	void cook(); 
-	void Automata::finish();
+	void finish();
 };
 #endif
