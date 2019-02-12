@@ -14,8 +14,8 @@ class Automata{
 private:
 	int cash;
 	int cash_tmp=0;
-	array <string, 7> menu{ { "Caffe espresso", "Caffe lungo", "Cappussino", "Cap-coik", "Latte", "Cicollato", "Cicollato forte" } };
-	array <int, 7> prices{ { 28, 30, 30, 35, 30, 40, 42 } };
+	string menu[7]={ "Caffe espresso", "Caffe lungo", "Cappussino", "Cap-coik", "Latte", "Cicollato", "Cicollato forte" } ;
+	int prices[7]= { 28, 30, 30, 35, 30, 40, 42 } ;
 	int choice_int;
 	STATES state;
 public:
