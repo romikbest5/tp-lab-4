@@ -51,7 +51,7 @@ STATES Automata::printState(){
 	}
 	return state;
 }
-void choice(int ch){	
+void Automata::choice(int ch){	
 	if (state == ACCEPT && ch<=7 && ch>=1){
 		choice_int=ch-1;
 		state = CHECK;
@@ -87,7 +87,7 @@ int Automata::getChange(){
 		return ost;
 
 }
-void cancel(){
+void Automata::cancel(){
 		if (state == ACCEPT){
 			int change;
 			change = cash_tmp;
@@ -96,7 +96,7 @@ void cancel(){
 			on();
 		}
 } 
-void cook(){
+void Automata::cook(){
 	if (state == COOK){
 		cout << "Your drink is cooking..." << endl;
 		finish();
