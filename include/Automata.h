@@ -2,6 +2,7 @@
 #define _AUTOMATA_H
 #pragma once
 #include <array>
+#include <string>
 typedef enum{
 	OFF, //0
 	WAIT, //1
