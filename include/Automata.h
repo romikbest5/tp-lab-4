@@ -1,8 +1,11 @@
 #ifndef _AUTOMATA_H
 #define _AUTOMATA_H
 #pragma once
+#include <iostream>
 #include <array>
 #include <string>
+
+using namespace std;
 typedef enum{
 	OFF, //0
 	WAIT, //1
