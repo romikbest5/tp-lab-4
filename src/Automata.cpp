@@ -5,6 +5,9 @@
 
 using namespace std;
 
+Automata::Automata() {
+	state = OFF;
+}
 void Automata::on(){
 	state = WAIT;
 	cout << "I'm ready!" << endl;
