@@ -5,7 +5,7 @@
 
 
 
-const int N = 4;
+const int N = 6;
 
 class Automata {
 private:
