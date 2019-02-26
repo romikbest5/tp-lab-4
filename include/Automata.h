@@ -16,6 +16,9 @@ private:
     int prices [5]={10, 12, 15, 20, 25};
     STATES state;
 
+    string printMenu(){};
+    string pintState(){};
+
 public:
     void on(){};
     void off(){};
