@@ -18,7 +18,7 @@ private:
 
 
 
-    void finish();
+
 
 
 
@@ -26,12 +26,16 @@ public:
     Automata();
     STATES on();
     STATES off();
-    bool check();
-    STATES cook();
-    int printCash();
-    STATES choice(int choice_number);
-    void PrintState();
-    void printMenu();
     STATES coin(int payment);
+    STATES cook();
+    STATES cancel();
+    STATES finish();
+    STATES choice(int choice_number);
+    int printCash();
+    bool check();
+    void money_refund();
+    void printState();
+    void printMenu();
+
 
 };

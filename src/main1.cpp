@@ -8,11 +8,9 @@ using namespace std;
 int main(){
     Automata a;
     a.on();
-    a.coin(324);
-    a.coin(324);
-    a.coin(324);
-    a.coin(324);
-    a.coin(324);
-    a.choice(2);
+    a.printMenu();
+    a.coin(3);
+    a.cancel();
+
 }
 
