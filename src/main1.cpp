@@ -8,5 +8,7 @@ using namespace std;
 int main(){
     Automata a;
     a.on();
+    a.coin(324);
+    cout << a.printCash();
 }
 

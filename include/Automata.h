@@ -5,15 +5,15 @@
 
 #include <iostream>
 #include <string>
+#include "STATES.h"
 
 using namespace std;
-
+const int N = 4;
 class Automata {
 private:
     int cash;
     string menu[4] = { "tea", "coffee with milk", "cappuccino", "espresso" };
     int prices[4] = { 15, 20, 30, 25 };
-    enum STATES { OFF, WAIT, ACCEPT, CHECK, COOK };
     STATES state;
 
     void printMenu();
@@ -24,7 +24,9 @@ private:
 
 public:
     Automata();
-    void on();
-    void off();
+    STATES on();
+    STATES off();
+    int printCash();
+    STATES coin(int payment);
 
 };
