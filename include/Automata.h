@@ -1,31 +1,30 @@
 //
 // Created by Alexander on 25.02.2019.
 //
-
-#ifndef TASK1_AUTOMATA_H
-#define TASK1_AUTOMATA_H
+#pragma once
 
 #include <iostream>
 #include <string>
+
 using namespace std;
+
 class Automata {
 private:
     int cash;
-    enum STATES {OFF, WAIT, ACCEPT, CHECK, COOK};
-    string menu[5]={"milk","tea","coffee","espresso","juice"};
-    int prices [5]={10, 12, 15, 20, 25};
+    string menu[4] = { "tea", "coffee with milk", "cappuccino", "espresso" };
+    int prices[4] = { 15, 20, 30, 25 };
+    enum STATES { OFF, WAIT, ACCEPT, CHECK, COOK };
     STATES state;
 
-    void printMenu(){};
-    void pintState(){};
+    void printMenu();
+    void cook();
+    void finish();
+    void PrintState();
+
 
 public:
-    void on(){};
-    void off(){};
-    void coin(){};
-
-
+    Automata();
+    void on();
+    void off();
 
 };
-
-#endif //TASK1_AUTOMATA_H
