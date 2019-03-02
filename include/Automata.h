@@ -15,7 +15,7 @@ private:
     string menu[4] = { "Tea", "Coffee with milk", "Cappuccino", "Espresso" };
     int prices[4] = { 15, 20, 30, 25 };
     STATES state;
-
+    bool check();
 
 
 
@@ -32,7 +32,6 @@ public:
     STATES finish();
     STATES choice(int choice_number);
     int printCash();
-    bool check();
     void money_refund();
     void printState();
     void printMenu();

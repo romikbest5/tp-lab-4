@@ -75,10 +75,6 @@ STATES Automata::choice(int choice_number) {
 }
 
 bool Automata::check() {
-    if (state != CHECK){
-        cout << "The state of the machine must be CHECK"<<endl;
-        return false;
-    }
     return (cash >= prices[choice_n]);
 }
 
