@@ -11,22 +11,27 @@ using namespace std;
 const int N = 4;
 class Automata {
 private:
-    int cash;
-    string menu[4] = { "tea", "coffee with milk", "cappuccino", "espresso" };
+    int cash,choice_n;
+    string menu[4] = { "Tea", "Coffee with milk", "Cappuccino", "Espresso" };
     int prices[4] = { 15, 20, 30, 25 };
     STATES state;
 
-    void printMenu();
-    void cook();
+
+
     void finish();
-    void PrintState();
+
 
 
 public:
     Automata();
     STATES on();
     STATES off();
+    bool check();
+    STATES cook();
     int printCash();
+    STATES choice(int choice_number);
+    void PrintState();
+    void printMenu();
     STATES coin(int payment);
 
 };

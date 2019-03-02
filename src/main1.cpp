@@ -9,6 +9,10 @@ int main(){
     Automata a;
     a.on();
     a.coin(324);
-    cout << a.printCash();
+    a.coin(324);
+    a.coin(324);
+    a.coin(324);
+    a.coin(324);
+    a.choice(2);
 }
 
