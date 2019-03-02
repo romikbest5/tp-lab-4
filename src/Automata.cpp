@@ -10,8 +10,19 @@ using namespace std;
 STATES Automata::on() {
     state = WAIT;
     cout << "Machine is working"<<endl;
-    return state;
+    return state ;
 }
+STATES Automata::off() {
+   if (state == WAIT) {
+       state = OFF;
+       cout<<"The machine is off"<<endl;
+       return state ;
+   } else {
+       cout << "The state of the machine must be WAIT"<<endl;
+       return state = Wrong_Operation;
+   }
+}
+
 
 
 void Automata::printState() {
