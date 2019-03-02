@@ -67,7 +67,7 @@ STATES Automata::coin(int payment) {
 
 void Automata::printMenu() {
     cout << "The Menu\n";
-    for (int product = 0; product <= N; ++product){
+    for (int product = 0; product < N; ++product){
         cout << product+1 <<"."<< menu[product] << " - " << prices[product] <<endl;
     }
 

@@ -8,10 +8,11 @@ using namespace std;
 int main(){
     Automata a;
     a.on();
-    a.coin(35);
+    a.coin(3);
+    a.printMenu();
     a.choice(3);
     a.cook();
-    a.finish();
+    a.off();
     a.printState();
 
 
