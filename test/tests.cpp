@@ -40,7 +40,7 @@ TEST(lab4, test5) {
 }
 
 TEST(lab4, test6) {
-  Automata.vendor;
+  Automata vendor;
   vendor.on();
   unsigned int money=120;
   vendor.coin(20);
