@@ -22,7 +22,6 @@ int main() {
 	machine.coin(23);
 	machine.choice(3);
 	machine.cook();
-	
 	machine.off();
 	cout << endl << endl << "TEST 3" << endl;
 
