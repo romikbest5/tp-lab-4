@@ -12,17 +12,6 @@ TEST(lab4,coin)
 	
 }
 
-TEST(lab4,choice_1)
-{
-    Automata machine;
-	machine.on();
-	EXPECT_EQ("This position is not found", machine.choice(9));
-	machine.coin(10);
-	EXPECT_EQ("The balance is 0... Deposit the money.", machine.choice(6));
-	machine.coin(10);
-	EXPECT_EQ(6, machine.choice(6));
-}
-
 TEST(lab4,check_1)
 {
     Automata machine;
@@ -41,7 +30,7 @@ TEST(lab4,check_2)
 	bool result = machine.check(5);
 	EXPECT_EQ(expected, result);
 }
-TEST(lab4,choice_2)
+TEST(lab4,choice_1)
 {
     Automata machine;
 	machine.on();
