@@ -35,13 +35,14 @@ void Automata::off()
 }
 int Automata::coin(int money)
 {
+	if(state==WAIT){
 	state = ACCEPT;
 	if (cash > 0) {
 		cout << "Your previos balance is " << cash << endl;
 	}
 	cash += money;
 	cout << "You have "<<cash<< endl;
-	return cash;
+	return cash;}
 }
 void Automata::printMenu()
 {
@@ -96,8 +97,7 @@ int Automata::cancel()
 {
 	if ((state == ACCEPT) || (state == CHECK)) {
 		cout<<"The operation is canceled"<<endl;
-		cout << "Your change is " << cash << endl;
-		cash = 0;
+		cout << "You have " << cash << endl;
 		state = WAIT;
 		printState();
 	}
@@ -108,7 +108,6 @@ void Automata::cook()
 	if (checked==true) {
 		state = COOK;
 		cout<<"Your order is being prepared"<<endl;
-		cout << "_______"<< endl << "      /_" << endl << "\     /_/" << endl<<" \___/"<<endl;;
 		finish();
 	}
 	else {

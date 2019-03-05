@@ -28,7 +28,7 @@ public:
 	void printState();
 	int choice(int);
 	bool check(int);
-	void cancel();
+	int cancel();
 	void cook();
 	void finish();
 };
