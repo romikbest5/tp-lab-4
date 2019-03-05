@@ -18,8 +18,8 @@ TEST(lab4,choice)
 	machine.on();
 	EXPECT_EQ("This position is not found", machine.choice(9));
 	machine.coin(10);
-	EXPECT_EQ("Еhe balance is 0... Deposit the money.", machine.choise(6));
-	machine.coin(10)
+	EXPECT_EQ("The balance is 0... Deposit the money.", machine.choise(6));
+	machine.coin(10);
 	EXPECT_EQ(6, machine.choise(6));
 }
 
@@ -45,8 +45,8 @@ TEST(lab4,choice)
 {
     Automata machine;
 	machine.on();
-	machine.coin(10)
-	machine.coin(14)
+	machine.coin(10);
+	machine.coin(14);
 	EXPECT_EQ(24, machine.cancel());
 }
 
