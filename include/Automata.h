@@ -25,7 +25,7 @@ public:
   Automata();
   void on();
   void off();
-  void coin(unsigned int);
+  unsigned int coin(unsigned int);
   void printMenu();
   STATES   printState();
   void choice(unsigned int);

@@ -18,7 +18,7 @@ void Automata::off() {
   printState();
 }
 
-void Automata::coin(unsigned int addcoin) {
+unsigned int Automata::coin(unsigned int addcoin) {
   if (state==WAIT) {
     state=ACCEPT;
     printState();
@@ -32,6 +32,7 @@ void Automata::coin(unsigned int addcoin) {
   else if (state==OFF) {
     cout << "machine is not working, turn on first!\n";
   }
+  return cash;
 }
 
 void Automata::printMenu() {

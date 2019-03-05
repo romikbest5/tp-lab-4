@@ -4,8 +4,8 @@
 TEST(lab4, test1){
   Automata vendor;
   STATES offstate=OFF;
-  EXPECT_EQ(offstate, vendor.printstate());
-  EXPECT_EQ(0, vendor.cash);
+  EXPECT_EQ(offstate, vendor.printState());
+  EXPECT_EQ(0, vendor.coin(0));
 }
 
 TEST(lab4,test2) {
@@ -37,4 +37,12 @@ TEST(lab4, test5) {
   unsigned int money=50;
   vendor.coin(money);
   EXPECT_EQ(money, vendor.finish());
+}
+
+TEST(lab4, test6) {
+  Automata.vendor;
+  vendor.on();
+  unsigned int money=120;
+  vendor.coin(20);
+  EXPECT_EQ(money, vendor.coin(100));
 }
