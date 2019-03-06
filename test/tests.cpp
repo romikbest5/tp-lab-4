@@ -3,18 +3,18 @@
 
 TEST(Automata_on,test1)
 {
-Automata a;
-a.on();
-EXPECT_EQ(WAIT, a.printState());
+    Automata a;
+    a.on();
+    EXPECT_EQ(WAIT, a.printState());
 }
 
 
 TEST(Automata_off, test2)
 {
-Automata a;
-a.on();
-a.off();
-EXPECT_EQ(OFF, a.printState());
+    Automata a;
+    a.on();
+    a.off();
+    EXPECT_EQ(OFF, a.printState());
 }
 
 TEST(Automata_coin, test3)
