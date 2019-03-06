@@ -5,10 +5,10 @@
 
 #include <iostream>
 #include <string>
-#include "STATES.h"
 
 using namespace std;
 const int N = 4;
+enum STATES { OFF, WAIT, ACCEPT, CHECK, COOK, Wrong_Operation };
 class Automata {
 private:
     int cash,choice_n;

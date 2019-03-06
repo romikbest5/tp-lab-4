@@ -29,7 +29,7 @@ void Automata::printState() {
     switch (state)
     {
         case(OFF):
-            cout<<"The machine is OFF"<<endl;
+            cout<<"The state of the machine is OFF"<<endl;
             break;
         case (WAIT):
             cout<<"Waiting..."<<endl;
@@ -81,6 +81,10 @@ STATES Automata::choice(int choice_number) {
          return state = Wrong_Operation;
     }
     choice_n = choice_number;
+    if (choice_n > N ){
+        cout << " We have only 4 products, please try again";
+        return state = Wrong_Operation;
+    }
     cout << "Your choice is: " << menu[choice_number] << " the price of the product is: "<< prices[choice_number]<<endl;
     return state;
 }
