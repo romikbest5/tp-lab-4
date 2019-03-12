@@ -1,104 +1,160 @@
 #include "gtest/gtest.h"
-#include "task1.h"
-#include "task2.h"
-#include "task3.h"
-#include "task4.h"
-#include "task5.h"
+#include "automata.h"
+#include <string>
 
-// task1
-TEST(lab1,task1_1)
-{
-    unsigned long res=findValue(1,20);
-    EXPECT_EQ(232792560,res);
-}
-TEST(lab1,task1_2)
-{
-    unsigned long res=findValue(1,10);
-    EXPECT_EQ(2520,res);
-}
+using namespace std;
 
-// task2
-TEST(lab1,task2_1)
+//simple
+TEST(lab4,scene1)
 {
-   EXPECT_EQ(true,checkPrime(2));
-}
-TEST(lab1,task2_2)
-{
-   EXPECT_EQ(true,checkPrime(3));
-}
-TEST(lab1,task2_3)
-{
-   EXPECT_EQ(false,checkPrime(12));
-}
-TEST(lab1,task2_4)
-{
-   unsigned long long res=nPrime(6);
-   EXPECT_EQ(13,res);
-}
-TEST(lab1,task2_5)
-{
-   unsigned long long res=nPrime(500);
-   EXPECT_EQ(3571,res);
-}
-TEST(lab1,task2_6)
-{
-   unsigned long long res=nextPrime(1031);
-   EXPECT_EQ(1033,res);
-}
-TEST(lab1,task2_7)
-{
-   unsigned long long res=nextPrime(3559);
-   EXPECT_EQ(3571,res);
-}
-TEST(lab1,task2_8)
-{
-   unsigned long long res=nextPrime(2);
-   EXPECT_EQ(3,res);
-}
+    Automata nc;
+    string h = nc.on();
+    EXPECT_EQ("THE MACHINE HAS TURNED ON",h);
 
-// task3
-TEST(lab1,task3_1)
-{
-   unsigned long long res=sumPrime(2000000);
-   unsigned long long expected=142913828922;
-   EXPECT_EQ(expected,res);
+    nc.coin(10);
+    int c = nc.getcash();
+    EXPECT_EQ(10,c);
+
+    nc.coin(30);
+    EXPECT_EQ(ACCEPT, nc.getstate());
+
+    string ans = nc.choice(2);
+    EXPECT_EQ("ENJOY YOUR DRINK",ans);
 }
-TEST(lab1,task3_2)
+// double on()
+TEST(lab4,scene2)
 {
-   unsigned long long res=sumPrime(10);
-   unsigned long long expected=17;
-   EXPECT_EQ(expected,res);
+    Automata nc;
+    string h = nc.on();
+    EXPECT_EQ("THE MACHINE HAS TURNED ON",h);
+    h = nc.on();
+    EXPECT_EQ("THE MACHINE HAS ALREADY TURNED ON",h);
+
+    nc.coin(10);
+    int c = nc.getcash();
+    EXPECT_EQ(10,c);
+
+    nc.coin(30);
+    EXPECT_EQ(ACCEPT, nc.getstate());
+
+    string ans = nc.choice(2);
+    EXPECT_EQ("ENJOY YOUR DRINK",ans);
+}
+//off
+TEST(lab4,scene3)
+{
+    Automata nc;
+    string h = nc.on();
+    EXPECT_EQ("THE MACHINE HAS TURNED ON",h);
+
+    nc.coin(10);
+    int c = nc.getcash();
+    EXPECT_EQ(10,c);
+
+    nc.coin(30);
+    EXPECT_EQ(ACCEPT, nc.getstate());
+
+    string ans = nc.choice(2);
+    EXPECT_EQ("ENJOY YOUR DRINK",ans);
+    
+    ans = nc.off();
+    EXPECT_EQ("THE MACHINE HAS TURNED OFF",ans);
 }
 
-// task4
-TEST(lab1,task4_1)
+//not enough money
+TEST(lab4,scene4)
 {
-   char *x="123456789";
-   char *y="000000001";
-   char *expected="123456790";
-   char *z=sum(x,y);
-   EXPECT_STREQ(expected,z);
-}
-TEST(lab1,task4_2)
-{
-   char *x="99999999999999999999";
-   char *y="1";
-   char *expected="100000000000000000000";
-   char *z=sum(x,y);
-   EXPECT_STREQ(expected,z);
+    Automata nc;
+    nc.on();
+    nc.coin(10);
+    string ans = nc.choice(2);
+    EXPECT_EQ("ERROR. NOT ENOUGHT MONEY",ans);
+    nc.off();
 }
 
-//task5
-TEST(lab1,task5)
+//wrong number of drinks
+TEST(lab4,scene5)
 {
-   char *buf="123,456,789";
-   int N=0;
-   char **result=nullptr;
-   split(&result, &N, buf, ',');
-   
-   EXPECT_EQ(3,N);
-   EXPECT_NE(nullptr,result);
-   EXPECT_STREQ("123",result[0]);
-   EXPECT_STREQ("456",result[1]);
-   EXPECT_STREQ("789",result[2]);
+    Automata nc;
+    nc.on();
+    nc.coin(50);
+    string ans = nc.choice(16);
+    EXPECT_EQ("ERROR. INVALID NUMBER",ans);
+    nc.off();
 }
+//another one simple (WAIT AFTER FINISH)
+TEST(lab4,scene6)
+{
+    Automata nc;
+    string h = nc.on();
+    EXPECT_EQ("THE MACHINE HAS TURNED ON",h);
+
+    nc.coin(10);
+    int c = nc.getcash();
+    EXPECT_EQ(10,c);
+
+    nc.coin(30);
+    EXPECT_EQ(ACCEPT, nc.getstate());
+
+    string ans = nc.choice(2);
+    EXPECT_EQ("ENJOY YOUR DRINK",ans);
+    
+    EXPECT_EQ(WAIT, nc.getstate());
+}
+
+//another one simple (CASH AFTER FINISH)
+TEST(lab4,scene7)
+{
+    Automata nc;
+    string h = nc.on();
+    EXPECT_EQ("THE MACHINE HAS TURNED ON",h);
+
+    nc.coin(10);
+    int c = nc.getcash();
+    EXPECT_EQ(10,c);
+
+    nc.coin(30);
+    EXPECT_EQ(ACCEPT, nc.getstate());
+
+    string ans = nc.choice(2);
+    EXPECT_EQ("ENJOY YOUR DRINK",ans);
+    
+    EXPECT_EQ(WAIT, nc.getstate());
+    
+    EXPECT_EQ(0, nc.getcash());
+}
+
+
+// choosing after an error(number of drink)
+TEST(lab4,scene8)
+{
+     Automata nc;
+    nc.on();
+    nc.coin(50);
+    nc.choice(16);
+    
+    string ans = nc.choice(1);
+    EXPECT_EQ("ENJOY YOUR DRINK",ans);
+    
+    nc.off();
+}
+
+// choosing after an error(money)
+TEST(lab4,scene9)
+{
+    Automata nc;
+    nc.on();
+    nc.coin(10);
+    string ans = nc.choice(1);
+    EXPECT_EQ("ERROR. NOT ENOUGHT MONEY",ans);
+    
+    nc.coin(10);
+    EXPECT_EQ(20,nc.getcash());
+    
+    ans = nc.choice(1);
+    EXPECT_EQ("ENJOY YOUR DRINK",ans);
+    
+    nc.off();
+}
+
+
