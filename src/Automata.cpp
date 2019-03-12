@@ -11,7 +11,7 @@ TPrice prices[] =
 Automata::Automata()
 	{
 		state = aOff;
-		coins = 0;
+		this->coins = 0;
 	}
 
 	// Простые состояния - условия хватает
@@ -31,12 +31,13 @@ Automata::Automata()
 		std::cout << "Cant OFF from" << StateNames[state] << "state" << std::endl;
 	}
 
-	void Automata::coin()
+	void Automata::coin(unsigned int currency)
 	{
 		if (state == aWait)
 		{
 			std::cout << "Enter coin count: " << std::endl;
-			std::cin >> coins;
+			//std::cin >> coins;
+			this->coins+=currency;
 			state = aAccept;
 		}
 		else
@@ -59,7 +60,7 @@ Automata::Automata()
 		};
 	}
 
-	void Automata::choice()
+	void Automata::choice(unsigned int num)
 	{
 		if (state == aAccept)
 		{
@@ -67,7 +68,8 @@ Automata::Automata()
 			for (int i = 0; prices[i].price != 0; i++)
 				std::cout << i+1<<"-"<< prices[i].name <<":"<< prices[i].price << "coins" << std::endl;
 			std::cout << "Enter:" << std::endl;
-			std::cin >> sel;
+			//std::cin >> sel;
+			sel=num;
 			sel--;
 
 			state = aCheck;
@@ -76,11 +78,11 @@ Automata::Automata()
 			std::cout << "Cant CHOICE from" << StateNames[state] << "state" << std::endl;
 	}
 
-	bool Automata::check()
+	bool Automata::check(unsigned int sel)
 	{
 		if (state == aCheck)
 		{
-			if (prices[sel].price > coins)
+			if (prices[sel].price > this->coins)
 				std::cout << "No enought coins (" << coins << "and price is" << coins << ")" << prices[sel].price << std::endl;
 			else
 			{
@@ -110,14 +112,14 @@ Automata::Automata()
 	{
 		if (state == aCook)
 		{
-			coins -= prices[sel].price;
+			this->coins -= prices[sel].price;
 
-			if (coins > 0)
+			if (this->coins > 0)
 			{
 				std::cout << "Return" <<  coins << std::endl;
-				coins = 0;
+				return this->coins;
 			}
-
+			this->coins = 0;
 			state = aWait;
 		}
 		else
