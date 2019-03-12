@@ -32,10 +32,10 @@ public:
 	Automata();
 	void on();
 	void off();
-	void coin();
+	void coin(unsigned int);
 	void cancel();
-	void choice();
-	bool check();
+	void choice(unsigned int);
+	bool check(unsigned int);
 	void cook();
 	void finish();
 	void printState();
