@@ -97,9 +97,9 @@ Automata::Automata()
 		return false;
 	}
 
-	void Automata::cook()
+	void Automata::cook(unsigned int sel)
 	{
-		if ((state == aCheck) & check())
+		if ((state == aCheck) & (check(sel)==true))
 		{
 			state = aCook;
 			std::cout << "Cook some" <<  std::endl;
