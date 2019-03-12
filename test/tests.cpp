@@ -8,7 +8,7 @@ TEST(lab4, task1_1)
 	a.coin(20);
 	a.choice(2);
 	unsigned int coins=a.finish();
-	EXPECT_EQ(0, coins);
+	EXPECT_EQ(13, coins);
 }
 
 
