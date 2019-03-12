@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
 
 # Make PROJECT_SOURCE_DIR, PROJECT_BINARY_DIR, and PROJECT_NAME available.
-set(PROJECT_NAME task1) 
+set(PROJECT_NAME automata)
 project(${PROJECT_NAME})
 
 set(CMAKE_CXX_FLAGS "-g -Wall")
@@ -18,23 +18,14 @@ include_directories(${COMMON_INCLUDES})
 file(GLOB TEST_SRC_FILES ${PROJECT_SOURCE_DIR}/test/*.cpp)
 
 
-set(SRC_FILES1 ${PROJECT_SOURCE_DIR}/src/main1.cpp)
-set(SRC_FILES2 ${PROJECT_SOURCE_DIR}/src/main2.cpp)
-set(SRC_FILES3 ${PROJECT_SOURCE_DIR}/src/main3.cpp)
-
 set(CMAKE_CXX_STANDARD 11)
 
-#add_library(task1_lib ${SRC_FILES1})
-#add_library(task2_lib ${SRC_FILES2})
-#add_library(task3_lib ${SRC_FILES3})
-
-add_executable(task1 ${SRC_FILES1})
-add_executable(task2 ${SRC_FILES2})
-add_executable(task3 ${SRC_FILES3})
-
-#target_link_libraries(task1 task1_lib)
-#target_link_libraries(task2 task2_lib)
-#target_link_libraries(task3 task3_lib)
+set(SRC_FILES ${PROJECT_SOURCE_DIR}/src/Automata.cpp)
+add_library(task_lib ${SRC_FILES})
+add_executable(task ${PROJECT_SOURCE_DIR}/src/main.cpp)
+#add_executable(tests ${PROJECT_SOURCE_DIR}/test/tests.cpp)
+target_link_libraries(task task_lib)
+#target_link_libraries(tests task_lib)
 
 ################################
 # Testing
@@ -59,7 +50,7 @@ if (BUILD_TESTS)
   add_executable(runUnitTests ${TEST_SRC_FILES})
 
   # Standard linking to gtest stuff.
-  target_link_libraries(runUnitTests gtest gtest_main)
+  target_link_libraries(runUnitTests gtest gtest_main task_lib)
 
   # Extra linking for the project.
   #target_link_libraries(runUnitTests task1_lib task2_lib task3_lib)
