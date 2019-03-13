@@ -24,7 +24,7 @@ TEST(Automata_coin, test3)
     a.printMenu();
     a.coin(25);
     a.coin(50);
-    EXPECT_EQ(75, a.printCash());
+    EXPECT_EQ(75, a.getCash());
 }
 
 TEST(Automata_choice, test4)

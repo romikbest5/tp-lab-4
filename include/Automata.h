@@ -31,7 +31,7 @@ public:
     STATES cancel();
     STATES finish();
     STATES choice(int choice_number);
-    int printCash();
+    int getCash();
     void money_refund();
     STATES printState();
     void printMenu();

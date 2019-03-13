@@ -147,7 +147,7 @@ STATES Automata::finish() {
 }
 
 
-int Automata::printCash(){
+int Automata::getCash(){
     return cash;
 }
 
