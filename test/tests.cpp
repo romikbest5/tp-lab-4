@@ -1,6 +1,6 @@
-#inlude "gtest/gtest.h"
-#inlude "Automata.h"
-#inlude <string>
+#include "gtest/gtest.h"
+#include "Automata.h"
+#include <string>
 
 using namespace std;
 // task1
