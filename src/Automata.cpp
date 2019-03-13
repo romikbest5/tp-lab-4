@@ -25,27 +25,27 @@ STATES Automata::off() {
 
 
 
-void Automata::printState() {
+STATES Automata::printState() {
     switch (state)
     {
         case(OFF):
             cout<<"The state of the machine is OFF"<<endl;
-            break;
+            return OFF;
         case (WAIT):
             cout<<"Waiting..."<<endl;
-            break;
+            return WAIT;
         case (ACCEPT):
             cout<<"Insert money "<<endl;
-            break;
+            return ACCEPT;
         case (CHECK):
             cout<<"Cash cheking, wait a minute please"<<endl;
-            break;
+            return CHECK;
         case (COOK):
             cout<<"The product is cooking"<<endl;
-            break;
+            return COOK;
         case (Wrong_Operation):
             cout<<"Error!"<<endl;
-            break;
+            return Wrong_Operation;
 
 
     }

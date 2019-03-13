@@ -33,7 +33,7 @@ public:
     STATES choice(int choice_number);
     int printCash();
     void money_refund();
-    void printState();
+    STATES printState();
     void printMenu();
 
 
