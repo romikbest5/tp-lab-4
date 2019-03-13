@@ -14,7 +14,7 @@ TEST(lab4,test1)
    EXPECT_EQ(15, m.getCash());
    EXPECT_EQ(ACCEPT, state);
    EXPECT_EQ(CHECK, m.choice(1));
-   EXPECT_EQ(COOK, m.cook())
+   EXPECT_EQ(COOK, m.cook());
    string ans = "Get your drink";
    EXPECT_EQ(ans, m.finish());
    EXPECT_EQ(OFF, m.off());
@@ -24,7 +24,7 @@ TEST(lab4,test1)
 TEST(lab1,test2)
 {
    Automata m;
-   EXPECT_EQ(ERROR, m.off())
+   EXPECT_EQ(ERROR, m.off());
 }
 
 //not enough money
