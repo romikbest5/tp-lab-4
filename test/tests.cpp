@@ -64,6 +64,6 @@ TEST(Automata_cook_and_finish,test5)
     EXPECT_EQ(COOK, a.printState());
     a.finish();
     ASSERT_EQ(a.printState(), WAIT);
-    EXPECT_EQ(a.getCash(), 20);
+    EXPECT_EQ(a.getCash(), 0);
 }
 
