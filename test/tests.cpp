@@ -71,5 +71,5 @@ TEST(lab4, test7)
    m.choice(1);
    EXPECT_EQ(ERROR, m.cook());
    EXPECT_EQ(WAIT, m.restart());
-   EXPECT_EQ(15, m.returnCash());
+   EXPECT_EQ(15, m.returnMoney());
 }
