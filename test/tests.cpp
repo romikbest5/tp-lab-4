@@ -55,21 +55,9 @@ m.on();
 m.coin(12);
 int c = m.getCash();
 EXPECT_EQ(12,c);
-m.choice(2);
+m.choice(1);
 EXPECT_EQ(true,m.check());
 EXPECT_EQ(COOK, m.cook());
 EXPECT_EQ("Get your drink", m.finish());
 EXPECT_EQ(0, m.getCash());
-}
-
-// Try to cook without checking
-TEST(lab4, test7)
-{
-   Automata m;
-   m.on();
-   m.coin(15);
-   m.choice(1);
-   EXPECT_EQ(ERROR, m.cook());
-   EXPECT_EQ(WAIT, m.restart());
-   EXPECT_EQ(15, m.returnMoney());
 }
