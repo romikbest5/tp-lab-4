@@ -13,7 +13,6 @@ int main(){
     a.cook();
     a.finish();
     a.off();
-    a.printState();
     return 0;
 
 }
