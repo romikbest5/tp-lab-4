@@ -1,104 +1,75 @@
-#include "gtest/gtest.h"
-#include "task1.h"
-#include "task2.h"
-#include "task3.h"
-#include "task4.h"
-#include "task5.h"
+#imlude "gtest/gtest.h"
+#imlude "Automata.h"
+#imlude <string>
 
+using namespace std;
 // task1
-TEST(lab1,task1_1)
+// ordinary work
+TEST(lab4,test1)
 {
-    unsigned long res=findValue(1,20);
-    EXPECT_EQ(232792560,res);
+   Automata m;
+   STATES state = m.on();
+   EXPECT_EQ(WAIT,state);
+   state = m.coin(15);
+   EXPECT_EQ(15, m.getCash());
+   EXPECT_EQ(ACCEPT, state);
+   EXPECT_EQ(CHOICE, m.choice(1));
+   EXPECT_EQ(COOK, m.cook())
+   string ans = "Get your drink";
+   EXPECT_EQ(ans, m.finish());
+   EXPECT_EQ(OFF, m.off());
+
 }
-TEST(lab1,task1_2)
+// Turn off not working machine
+TEST(lab1,test2)
 {
-    unsigned long res=findValue(1,10);
-    EXPECT_EQ(2520,res);
+   Automata m;
+   EXPECT_EQ(ERROR, m.off())
 }
 
-// task2
-TEST(lab1,task2_1)
+//not enough money
+TEST(lab4,test4)
 {
-   EXPECT_EQ(true,checkPrime(2));
-}
-TEST(lab1,task2_2)
-{
-   EXPECT_EQ(true,checkPrime(3));
-}
-TEST(lab1,task2_3)
-{
-   EXPECT_EQ(false,checkPrime(12));
-}
-TEST(lab1,task2_4)
-{
-   unsigned long long res=nPrime(6);
-   EXPECT_EQ(13,res);
-}
-TEST(lab1,task2_5)
-{
-   unsigned long long res=nPrime(500);
-   EXPECT_EQ(3571,res);
-}
-TEST(lab1,task2_6)
-{
-   unsigned long long res=nextPrime(1031);
-   EXPECT_EQ(1033,res);
-}
-TEST(lab1,task2_7)
-{
-   unsigned long long res=nextPrime(3559);
-   EXPECT_EQ(3571,res);
-}
-TEST(lab1,task2_8)
-{
-   unsigned long long res=nextPrime(2);
-   EXPECT_EQ(3,res);
+Automata m;
+m.on();
+m.coin(10);
+m.choice(2);
+EXPECT_EQ(false, m.check());
+m.off();
 }
 
-// task3
-TEST(lab1,task3_1)
+//wrong number of drinks
+TEST(lab4,test5)
 {
-   unsigned long long res=sumPrime(2000000);
-   unsigned long long expected=142913828922;
-   EXPECT_EQ(expected,res);
+Automata m;
+m.on();
+m.coin(50);
+EXPECT_EQ(ERROR,m.choice(16));
+m.off();
 }
-TEST(lab1,task3_2)
+// Count cash after finish
+TEST(lab4,test6)
 {
-   unsigned long long res=sumPrime(10);
-   unsigned long long expected=17;
-   EXPECT_EQ(expected,res);
-}
-
-// task4
-TEST(lab1,task4_1)
-{
-   char *x="123456789";
-   char *y="000000001";
-   char *expected="123456790";
-   char *z=sum(x,y);
-   EXPECT_STREQ(expected,z);
-}
-TEST(lab1,task4_2)
-{
-   char *x="99999999999999999999";
-   char *y="1";
-   char *expected="100000000000000000000";
-   char *z=sum(x,y);
-   EXPECT_STREQ(expected,z);
+Automata m;
+m.on();
+m.coin(12);
+int c = m.getCash();
+EXPECT_EQ(12,c);
+m.choice(2);
+EXPECT_EQ(true,m.check());
+EXPECT_EQ(COOK, m.cook());
+EXPECT_EQ("Get your drink", m.finish());
+EXPECT_EQ(0, m.getCash());
 }
 
-//task5
-TEST(lab1,task5)
+// Try to cook without checking
+TEST(lab4, test7)
 {
-   char *buf="123,456,789";
-   int N=0;
-   char **result=nullptr;
-   split(&result, &N, buf, ',');
-   
-   EXPECT_EQ(3,N);
-   EXPECT_NE(nullptr,result);
-   EXPECT_STREQ("123",result[0]);
-   EXPECT_STREQ("456",result[1]);
-   EXPECT_STREQ("789",result[2]);
+   Automata m;
+   m.on();
+   m.coin(15);
+   m.choice(1);
+   EXPECT_EQ(ERROR, m.cook());
+   EXPECT_EQ(WAIT, m.restart());
+   EXPECT_EQ(15, m.returnCash());
 }
