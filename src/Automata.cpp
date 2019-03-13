@@ -60,7 +60,7 @@ STATES Automata::coin(int payment) {
                 "Please try again!"<<endl;
         return state = Wrong_Operation;
     }
-    cout<<"The current balance: " << printCash() <<endl;
+    cout<<"The current balance: " << getCash() <<endl;
     return state;
 
 }
