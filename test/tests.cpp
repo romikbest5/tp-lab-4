@@ -13,7 +13,7 @@ TEST(lab4,test1)
    state = m.coin(15);
    EXPECT_EQ(15, m.getCash());
    EXPECT_EQ(ACCEPT, state);
-   EXPECT_EQ(CHOICE, m.choice(1));
+   EXPECT_EQ(CHECK, m.choice(1));
    EXPECT_EQ(COOK, m.cook())
    string ans = "Get your drink";
    EXPECT_EQ(ans, m.finish());
