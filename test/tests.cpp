@@ -19,14 +19,14 @@ TEST(lab4, task_2) {
 }
 
 TEST(lab4, task_3) {
-    Automata automata;
+     Automata automata;
     automata.on();
-    automata.coin(15);
+    automata.coin(25);
     automata.choice(1);
     int tmp = automata.getCash();
-    EXPECT_EQ(15, tmp);
-
+    EXPECT_EQ(10, tmp);
 }
+
 
 TEST(lab4, task_4) {
     Automata automata;
