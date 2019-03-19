@@ -83,7 +83,7 @@ void Automata::cook(unsigned int num)
 
 int Automata::getCash()
 {
-	cout << "Get cash" << endl;
+	cout << "Get cash  " <<  this->coins << endl;
 	return this->coins;
 }
 
