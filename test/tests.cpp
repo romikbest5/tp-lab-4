@@ -1,42 +1,47 @@
 #include "gtest/gtest.h"
 #include "../include/Automata.h"
-  TEST(lab4, task_1) 
-{
-	Automata a;
-	a.on();
-	 int c = a.getCash();
-	EXPECT_EQ(0, c);
+
+TEST(lab4, task_1) {
+    Automata automata;
+    automata.on();
+
+    int tmp = automata.getCash();
+    EXPECT_EQ(0, tmp);
 }
 
-TEST(lab4, task_2) 
-{
-	Automata a;
-	a.on();
-	a.coin(50);
-	 int c = a.getCash();
-	EXPECT_EQ(50, c);
+TEST(lab4, task_2) {
+    Automata automata;
+    automata.on();
+    automata.coin(12);
+
+    int tmp = automata.getCash();
+    EXPECT_EQ(12, tmp);
 }
 
-TEST(lab4, task_3) 
-{
-	Automata a;
-	a.on();
-	a.coin(20);
-	automata.choice(2);
+TEST(lab4, task_3) {
+    Automata automata;
+    automata.on();
+    automata.coin(15);
+    automata.choice(1);
+    int tmp = automata.getCash();
+    EXPECT_EQ(15, tmp);
 
-	 int c = a.getCash();
-	EXPECT_EQ(0, c);
 }
 
-TEST(lab4, task_4) 
-{
-	Automata a;
-	a.on();
-	a.coin(75);
-	a.choice(2);
-	a.choice(2);
-
-	 int c = a.getCash();
-	EXPECT_EQ(35, c);
+TEST(lab4, task_4) {
+    Automata automata;
+    automata.on();
+    automata.coin(20);
+    automata.choice(1);
+    int tmp = automata.getCash();
+    EXPECT_EQ(5, tmp);
 }
 
+TEST(lab4, task_5) {
+     Automata automata;
+    automata.on();
+    automata.coin(20);
+    automata.choice(2);
+    int tmp = automata.getCash();
+    EXPECT_EQ(0, tmp);
+}
