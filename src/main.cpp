@@ -1,6 +1,6 @@
 #include "Automata.h"
-
 int main()
+	
 {
 	Automata a;
 	std::cout << "Actions: 1 On. 2 Off. 3 Coin. 4. Cancel. 5 Choice. 6 Check. 7 Cook. 8 Get Cash. 9 Quit " << std::endl;
@@ -14,3 +14,4 @@ int main()
 	system("pause");
 	return 0;
 }
+
