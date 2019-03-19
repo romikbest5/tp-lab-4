@@ -20,7 +20,7 @@ private:
 
 public:
 
-    Automata();
+    Automata(std::ostream* message = nullptr);
     STATES on();
     STATES off();
     STATES coin(int);
@@ -34,6 +34,7 @@ public:
     STATES  cook();
     STATES restart();
     std::string finish();
+    std::ostream* message;
 
 };
 

@@ -5,10 +5,12 @@
 using namespace std;
 
 
-Automata::Automata()
+Automata::Automata(ostream* message) : cash(0), position(-1), state(OFF) // Default message value = nullptr
 {
-    state = OFF;
-    cash = 0;
+    if (message == nullptr)
+        this->message = &cout;
+    else
+        this->message = message;
 }
 
 STATES Automata::Automata::on()
@@ -24,7 +26,7 @@ STATES Automata::off()
         state = OFF;
     else
     {
-        cout << "Automata should be in WAIT condition" << endl;
+        (*message) << "Automata should be in WAIT condition\n";
         state = ERROR;
     }
     return state;
@@ -38,7 +40,7 @@ STATES Automata::coin(int sum)
    }
    else
    {
-       cout << "In order to add money, keep Automata in WAITING, ACCEPTING or CHECKING condition" << endl;
+       (*message) << "In order to add money, keep Automata in WAITING, ACCEPTING or CHECKING condition\n";
        state = ERROR;
    }
     return state;
@@ -51,7 +53,7 @@ int Automata::getCash()
 
 int Automata::returnMoney()
 {
-    cout << "Please, take your money: " << cash << " rub" << endl;
+    (*message) << "Please, take your money: " << cash << " rub\n";
     int num(cash);
     state = WAIT;
     cash = 0;
@@ -60,33 +62,33 @@ int Automata::returnMoney()
 }
 void Automata::printMenu()
 {
-    cout << "Menu: " << endl;
+    (*message) << "Menu:\n";
     for (int i(0); i < N; i++)
-        cout << i << ". " << menu[i] << " | " << prices[i] << endl;
+        (*message) << i << ". " << menu[i] << " | " << prices[i] << '\n';
 }
 
 void Automata::printState()
 {
-    cout << "Your current state is: ";
+    (*message) << "Your current state is: ";
     switch(state)
     {
         case OFF:
-            cout << "OFF" << endl;
+            (*message) << "OFF\n";
             break;
         case WAIT:
-            cout << "WAITING" << endl;
+            (*message) << "WAITING\n";
             break;
         case ACCEPT:
-            cout << "ACCEPTING" << endl;
+            (*message) << "ACCEPTING\n";
             break;
         case CHECK:
-            cout << "CHECKING" << endl;
+            (*message) << "CHECKING\n";
             break;
         case COOK:
-            cout << "COOKING" << endl;
+            (*message) << "COOKING\n";
             break;
         default:
-            cout << "STATE error" << endl;
+            (*message) << "STATE error\n";
             break;
     }
 }
@@ -97,16 +99,16 @@ STATES Automata::choice(int option)
         state = CHECK;
     else
     {
-        cout << "Automata is not in ACCEPT condition" << endl;
+        (*message) << "Automata is not in ACCEPT condition\n";
         return state = ERROR;
     }
     position = option;
     if (position < N)
-        cout << "Your choice: " << menu[position] << " | " << prices[position] << endl;
+        (*message) << "Your choice: " << menu[position] << " | " << prices[position] << '\n';
     else
     {
         state = ERROR;
-        cout << "Incorrect number" << endl;
+        (*message) << "Incorrect number\n";
     }
     return state;
 }
@@ -116,7 +118,7 @@ bool Automata::check()
     if (state == CHECK)
         return (cash >= prices[position]);
     else
-        cout << "Automata should be in CHECKING state" << endl;
+        (*message) << "Automata should be in CHECKING state\n";
     return false;
 }
 
@@ -131,7 +133,7 @@ STATES Automata::cancel()
     }
     else
     {
-        cout << "Automata should be in CHECKING or ACCEPTING state" << endl;
+        (*message) << "Automata should be in CHECKING or ACCEPTING state\n";
         state = ERROR;
     }
     return state;
@@ -145,16 +147,16 @@ STATES Automata:: cook()
         {
             cash -= prices[position];
             state = COOK;
-            cout << "COOKING." << endl;
-            cout << "COOKING..." << endl;
-            cout << "COOKING....." << endl;
-            cout << "COOKING......." << endl;
+            (*message) << "COOKING.\n";
+            (*message) << "COOKING...\n";
+            (*message) << "COOKING.....\n";
+            (*message) << "COOKING.......\n";
         }
         else
-            cout << "Sorry, you do not have enough cash" << endl;
+            (*message) << "Sorry, you do not have enough cash\n";
     } else
     {
-        cout << "Automata should be in ACCEPTING or CHECKING stage" << endl;
+        (*message) << "Automata should be in ACCEPTING or CHECKING stage\n";
         state = ERROR;
     }
 
@@ -169,7 +171,7 @@ STATES Automata::restart()
         state = WAIT;
     }
     else
-        cout << "Your machine is working properly" << endl;
+        (*message) << "Your machine is working properly\n";
     return state;
 }
 std::string Automata::finish()
@@ -183,10 +185,10 @@ std::string Automata::finish()
     else
     {
         ans = "Automata should be in COOKING state";
-        cout << ans << endl;
+        (*message) << ans << '\n';
         return ans;
     }
-    cout << ans << endl;
+    (*message) << ans << '\n';
     return ans;
 
 }
