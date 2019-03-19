@@ -1,6 +1,4 @@
 #include "Automata.h"
-
-
 Automata::Automata()
 {
 	state = aOff;
