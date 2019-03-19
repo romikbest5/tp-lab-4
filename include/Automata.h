@@ -1,32 +1,23 @@
 #pragma once
+
 #include <iostream>
+#include <vector>
 #include <string>
 #include <stdio.h>
 
 using namespace std;
 
 enum AState
-{
-	aOff = 0,
-	aWait,
-	aAccept,
-	aCheck,
-	aCook,
-};
-
-const char StateNames[6][9] ={	"Off",	"Wait",	"Accept",	"Check",	"Cook",	"Unknown"};
-
-struct TPrice
-{
-	char name[100];
-	int price;
-};
+{	aOff = 0,	aWait,	aAccept,	aCheck, 	aCook };
 
 class Automata
 {
+
 private:
 	AState state;
-	int coins, sel;
+	unsigned int coins;
+	vector<string> menu{ "Americano", "Latte", "Espresso", "Tea" };
+	vector<unsigned int> price{ 15, 20, 25, 30 };
 
 public:
 	Automata();
@@ -36,7 +27,7 @@ public:
 	void cancel();
 	void choice(unsigned int);
 	bool check(unsigned int);
-	void cook();
-	void finish();
-	void printState();
+	void cook(unsigned int); 
+	int getCash();
+
 };
