@@ -1,6 +1,6 @@
 #include "gtest/gtest.h"
 #include "Automata.h"
-
+/*
 TEST(lab4, task1_1)
 {
 	Automata a;
