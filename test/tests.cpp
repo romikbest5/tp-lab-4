@@ -1,104 +1,58 @@
 #include "gtest/gtest.h"
-#include "task1.h"
-#include "task2.h"
-#include "task3.h"
-#include "task4.h"
-#include "task5.h"
+#include "Automata.h"
 
+Automata nescaffe;
+STATES p;
+	
 // task1
-TEST(lab1,task1_1)
+TEST(Lab4, test1) 
 {
-    unsigned long res=findValue(1,20);
-    EXPECT_EQ(232792560,res);
+	nescaffe.on();
+	p = nescaffe.printState();
+	//1 - WAIT
+    EXPECT_EQ(1,p);
 }
-TEST(lab1,task1_2)
+TEST(Lab4, test2) 
 {
-    unsigned long res=findValue(1,10);
-    EXPECT_EQ(2520,res);
+	nescaffe.on();
+	nescaffe.coin(10);
+	nescaffe.choice(2);
+	p = nescaffe.printState();
+	//2 - ACCEPT
+	EXPECT_EQ(2,p);
 }
-
-// task2
-TEST(lab1,task2_1)
+TEST(Lab4, test3) 
 {
-   EXPECT_EQ(true,checkPrime(2));
+	nescaffe.on();
+	nescaffe.coin(10);
+	nescaffe.choice(2);
+	nescaffe.coin(50);
+    EXPECT_EQ(30, nescaffe.getChange());
 }
-TEST(lab1,task2_2)
+TEST(Lab4, test4) 
 {
-   EXPECT_EQ(true,checkPrime(3));
+	nescaffe.on();
+    nescaffe.coin(20);
+	nescaffe.choice(1);
+	nescaffe.cancel();
+	p=nescaffe.printState();
+    EXPECT_EQ(1,p);
 }
-TEST(lab1,task2_3)
+TEST(Lab4, test5) 
 {
-   EXPECT_EQ(false,checkPrime(12));
+	nescaffe.on();
+    nescaffe.coin(35);
+	nescaffe.choice(7);
+	nescaffe.choice(4);
+	p=nescaffe.printState();
+    EXPECT_EQ(1,p);
 }
-TEST(lab1,task2_4)
+TEST(Lab4, test6) 
 {
-   unsigned long long res=nPrime(6);
-   EXPECT_EQ(13,res);
-}
-TEST(lab1,task2_5)
-{
-   unsigned long long res=nPrime(500);
-   EXPECT_EQ(3571,res);
-}
-TEST(lab1,task2_6)
-{
-   unsigned long long res=nextPrime(1031);
-   EXPECT_EQ(1033,res);
-}
-TEST(lab1,task2_7)
-{
-   unsigned long long res=nextPrime(3559);
-   EXPECT_EQ(3571,res);
-}
-TEST(lab1,task2_8)
-{
-   unsigned long long res=nextPrime(2);
-   EXPECT_EQ(3,res);
-}
-
-// task3
-TEST(lab1,task3_1)
-{
-   unsigned long long res=sumPrime(2000000);
-   unsigned long long expected=142913828922;
-   EXPECT_EQ(expected,res);
-}
-TEST(lab1,task3_2)
-{
-   unsigned long long res=sumPrime(10);
-   unsigned long long expected=17;
-   EXPECT_EQ(expected,res);
+	nescaffe.on();
+	nescaffe.off();
+	p=nescaffe.printState();
+	//0 - OFF
+    EXPECT_EQ(0,p);
 }
 
-// task4
-TEST(lab1,task4_1)
-{
-   char *x="123456789";
-   char *y="000000001";
-   char *expected="123456790";
-   char *z=sum(x,y);
-   EXPECT_STREQ(expected,z);
-}
-TEST(lab1,task4_2)
-{
-   char *x="99999999999999999999";
-   char *y="1";
-   char *expected="100000000000000000000";
-   char *z=sum(x,y);
-   EXPECT_STREQ(expected,z);
-}
-
-//task5
-TEST(lab1,task5)
-{
-   char *buf="123,456,789";
-   int N=0;
-   char **result=nullptr;
-   split(&result, &N, buf, ',');
-   
-   EXPECT_EQ(3,N);
-   EXPECT_NE(nullptr,result);
-   EXPECT_STREQ("123",result[0]);
-   EXPECT_STREQ("456",result[1]);
-   EXPECT_STREQ("789",result[2]);
-}
